@@ -4,55 +4,55 @@
       "en": "Home",
       "es": "Inicio"
     },
-    "url": ""
+    "url": "/"
   },
   {
     "name": {
       "en": "About me",
       "es": "Sobre mí"
     },
-    "url": ""
+    "url": "/about/"
   },
   {
     "name": {
       "en": "Portfolio",
       "es": "Portafolio"
     },
-    "url": ""
+    "url": "/portfolio/"
   },
   {
     "name": {
       "en": "Skills",
       "es": "Habilidades"
     },
-    "url": ""
+    "url": "/skills/"
   },
   {
     "name": {
       "en": "Technologies",
       "es": "Tecnologías"
     },
-    "url": ""
+    "url": "/tech/"
   },
   {
     "name": {
       "en": "Work",
       "es": "Trabajos"
     },
-    "url": ""
+    "url": "/jobs"
   },
   {
     "name": {
       "en": "Projects",
       "es": "Proyectos"
     },
-    "url": ""
+    "url": "/projects/"
   },
   {
     "name": {
       "en": "Contact",
       "es": "Contacto"
     },
-    "url": ""
+    "url": "/contact/"
   }
 ]
