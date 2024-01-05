@@ -1,0 +1,58 @@
+[
+  {
+    "name": {
+      "en": "Home",
+      "es": "Inicio"
+    },
+    "url": ""
+  },
+  {
+    "name": {
+      "en": "About me",
+      "es": "Sobre mí"
+    },
+    "url": ""
+  },
+  {
+    "name": {
+      "en": "Portfolio",
+      "es": "Portafolio"
+    },
+    "url": ""
+  },
+  {
+    "name": {
+      "en": "Skills",
+      "es": "Habilidades"
+    },
+    "url": ""
+  },
+  {
+    "name": {
+      "en": "Technologies",
+      "es": "Tecnologías"
+    },
+    "url": ""
+  },
+  {
+    "name": {
+      "en": "Work",
+      "es": "Trabajos"
+    },
+    "url": ""
+  },
+  {
+    "name": {
+      "en": "Projects",
+      "es": "Proyectos"
+    },
+    "url": ""
+  },
+  {
+    "name": {
+      "en": "Contact",
+      "es": "Contacto"
+    },
+    "url": ""
+  }
+]

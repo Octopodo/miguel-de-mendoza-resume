@@ -1,0 +1,42 @@
+{
+  "personal": {
+    "title": {
+      "en": "Miguel de Mendoza",
+      "es": "Miguel de Mendoza"
+    },
+    "subtitle": {
+      "en": "Animation and Web Development",
+      "es": "Animación y Desarrollo web"
+    },
+    "tagline": {
+      "en": "From imagination to screen.",
+      "es": "De la imaginación a la pantalla."
+    },
+    "aboutMe": {
+      "en": "With 10 years of experience as an animator and motion graphics designer, I specialized in scripting for After Effects, Photoshop, and Animate. During the pandemic, I took the opportunity to learn web development and have worked on personal projects to strengthen my skills as a developer. I combine my creative experience with new technical skills, constantly exploring emerging technologies. I am excited about the opportunities at the intersection of animation and web development.",
+      "es": "Con 10 años de experiencia como animador y motion graphics designer, me especialicé en scripting para After Effects, Photoshop, y Animate. Durante la pandemia, aproveché para aprender desarrollo web y he trabajado en proyectos personales para fortalecer mis habilidades como desarrollador. Combino mi experiencia creativa con nuevas habilidades técnicas, explorando constantemente tecnologías emergentes. Estoy emocionado por las oportunidades en la intersección de la animación y el desarrollo web."
+    }
+  },
+  "education": [
+    {
+      "name": {
+        "es": "Universidad Francisco de Vitoria",
+        "en": "Francisco de Vitoria University"
+      },
+      "period": {
+        "es": "2006 - 2011",
+        "en": "2006 - 2011"
+      }
+    },
+    {
+      "name": {
+        "es": "Instituto de Mezcla",
+        "en": "Instituto de Mezcla"
+      },
+      "period": {
+        "es": "2019",
+        "en": "2019"
+      }
+    }
+  ]
+}
