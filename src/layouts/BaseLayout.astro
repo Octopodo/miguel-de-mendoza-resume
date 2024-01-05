@@ -1,12 +1,14 @@
 ---
 import CommonHead from '../components/CommonHead.astro'
-import i18n from '../data/i18n.json'
-let lang = navigator.language || 'en'
-lang = lang.slice(0, 2) !== 'es' ? 'en' : 'es'
+import Navigation from '../components/Navigation.astro'
+// import i18n from '../data/i18n.json'
+// let lang = navigator.language || 'en'
+// lang = lang.slice(0, 2) !== 'es' ? 'en' : 'es'
 ---
-<html lang={lang}>
+<html lang="en">
   <CommonHead/>
   <body>
+    <Navigation/>
     <slot/>
   </body>
 
