@@ -1,6 +1,14 @@
 {
-  "personalProjects": [
+  "title": {
+    "es": "Proyectos  Personales",
+    "en": "Side Projects"
+  },
+  "projects": [
     {
+      "period": {
+        "es": "",
+        "en": ""
+      },
       "name": {
         "es": "KT Bundle",
         "en": "KT Bundle"
@@ -11,6 +19,10 @@
       }
     },
     {
+      "period": {
+        "es": "",
+        "en": ""
+      },
       "name": {
         "es": "Fretboard Master",
         "en": "Fretboard Master"

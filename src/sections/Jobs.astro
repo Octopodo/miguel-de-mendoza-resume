@@ -1,0 +1,11 @@
+---
+import jobs from  '../data/jobs.json'
+import {lang } from '../data/lang'
+import Job from '../components/Job.astro'
+---
+<h1>{jobs.title[lang]}</h1>
+{jobs. jobs.map((job) => (
+    <Job schema={job} />
+))}
+
+

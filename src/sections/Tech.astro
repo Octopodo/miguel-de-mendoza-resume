@@ -1,0 +1,34 @@
+---
+import tech from '../data/tech.json'
+import {lang} from '../data/lang'
+---
+
+<h1 set:html={tech.title[lang]}></h1>
+
+<div class="animation-tech-section">
+  <h2 set:html={tech.animation.title[lang]}></h2>
+  <ul>
+    {tech.animation.skills.map(skill => (
+      <li set:html={skill[lang]}></li>
+    ))}
+  </ul>
+</div>
+
+<div class="dev-tech-section">
+  <h2 set:html={tech.dev.title[lang]}></h2>
+  <ul>
+    {tech.dev.skills.map(skill => (
+      <li set:html={skill[lang]}></li>
+    ))}
+  </ul>
+</div>
+
+<div class="learning-tech-section">
+  <h2 set:html={tech.learning.title[lang]}></h2>
+  <ul>
+    {tech.learning.skills.map(skill => (
+      <li set:html={skill[lang]}></li>
+    ))}
+  </ul>
+</div>
+

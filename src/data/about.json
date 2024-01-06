@@ -1,0 +1,22 @@
+{
+  "name": {
+    "en": "Miguel de Mendoza",
+    "es": "Miguel de Mendoza"
+  },
+  "title": {
+    "en": "Animation and Web Development",
+    "es": "Animación, Desarrollo y programación web"
+  },
+  "tagline": {
+    "en": "From imagination to screen.",
+    "es": "De la imaginación a la pantalla."
+  },
+  "aboutMeTitle": {
+    "en": "About me",
+    "es": "Sobre mí"
+  },
+  "aboutMe": {
+    "en": "With 10 years of experience as an animator and motion graphics designer, I specialized in scripting for After Effects, Photoshop, and Animate.<br><br> During the pandemic, I took the opportunity to learn web development and have worked on personal projects to strengthen my skills as a developer.<br><br> I combine my creative experience with new technical skills, constantly exploring emerging technologies. I am excited about the opportunities at the intersection of animation and web development.",
+    "es": "Con 10 años de experiencia como animador y motion graphics designer, me especialicé en scripting para After Effects, Photoshop, y Animate.<br> <br>Durante la pandemia, aproveché para aprender desarrollo web y he trabajado en proyectos personales para fortalecer mis habilidades como desarrollador.<br><br>Combino mi experiencia creativa con nuevas habilidades técnicas, explorando constantemente tecnologías emergentes. Estoy emocionado por las oportunidades en la intersección de la animación y el desarrollo web."
+  }
+}

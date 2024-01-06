@@ -1,70 +1,90 @@
 {
-  "technologies": {
-    "motion": {
-      "afterEffects": {
+  "title": {
+    "en": "Technologies",
+    "es": "Tecnologías"
+  },
+  "animation": {
+    "title": {
+      "en": "Animation",
+      "es": "Animación"
+    },
+    "skills": [
+      {
         "en": "After Effects",
         "es": "After Effects"
       },
-      "photoShop": {
+      {
         "en": "Photoshop",
         "es": "Photoshop"
       },
-      "toonBoomAnimation": {
+      {
         "en": "Toon Boom Animation",
         "es": "Toon Boom Animation"
       },
-      "adobeCreativeSuite": {
+      {
         "en": "Adobe Creative Suite",
         "es": "Suite Adobe"
       }
+    ]
+  },
+  "dev": {
+    "title": {
+      "en": "Development",
+      "es": "Desarrollo"
     },
-    "development": {
-      "html": {
+    "skills": [
+      {
         "en": "HTML",
         "es": "HTML"
       },
-      "css": {
+      {
         "en": "CSS",
         "es": "CSS"
       },
-      "javascript": {
+      {
         "en": "JavaScript",
         "es": "JavaScript"
       },
-      "python": {
+      {
         "en": "Python",
         "es": "Python"
       },
-      "vueJS": {
+      {
         "en": "Vue.js (Composition API & Options API)",
         "es": "Vue.js (API de composición y API de opciones)"
       },
-      "git": {
+      {
         "en": "Git",
         "es": "Git"
       }
+    ]
+  },
+  "learning": {
+    "title": {
+      "en": "Learning Now",
+      "es": "Aprendiendo actualmente"
     },
-    "learning": {
-      "tailwindCSS": {
+    "skills": [
+      {
         "en": "Tailwind CSS",
         "es": "Tailwind CSS"
       },
-      "astro": {
+      {
         "en": "Astro",
         "es": "Astro"
       },
-      "testingTDDAndVitest": {
+      {
         "en": "Testing, TDD, and Vitest",
         "es": "Testing, TDD y Vitest"
       },
-      "solid": {
+      {
         "en": "SOLID Principles",
         "es": "Principios SOLID"
       },
-      "githubActions": {
+      {
         "en": "GitHub Actions",
         "es": "GitHub Actions"
       }
-    }
+    ]
   }
 }

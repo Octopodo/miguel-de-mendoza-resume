@@ -4,55 +4,55 @@
       "en": "Home",
       "es": "Inicio"
     },
-    "url": "/miguel-de-mendoza-resume/"
+    "url": "#"
   },
   {
     "name": {
       "en": "About me",
       "es": "Sobre mí"
     },
-    "url": "/miguel-de-mendoza-resume/about/"
+    "url": "#about-me"
   },
   {
     "name": {
       "en": "Portfolio",
       "es": "Portafolio"
     },
-    "url": "/miguel-de-mendoza-resume/portfolio/"
+    "url": "#portfolio"
   },
   {
     "name": {
       "en": "Skills",
       "es": "Habilidades"
     },
-    "url": "/miguel-de-mendoza-resume/skills/"
+    "url": "#skills"
   },
   {
     "name": {
       "en": "Technologies",
       "es": "Tecnologías"
     },
-    "url": "/miguel-de-mendoza-resume/tech/"
+    "url": "#tech"
   },
   {
     "name": {
       "en": "Work",
       "es": "Trabajos"
     },
-    "url": "/miguel-de-mendoza-resume/jobs"
+    "url": "#jobs"
   },
   {
     "name": {
       "en": "Projects",
       "es": "Proyectos"
     },
-    "url": "/miguel-de-mendoza-resume/projects/"
+    "url": "#projects"
   },
   {
     "name": {
       "en": "Contact",
       "es": "Contacto"
     },
-    "url": "/miguel-de-mendoza-resume/contact/"
+    "url": "#contact"
   }
 ]

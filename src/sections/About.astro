@@ -1,0 +1,11 @@
+---
+import about from '../data/about.json'
+import { lang } from '../data/lang'
+---
+
+
+  <div id="about-me">
+    <h2 set:html={about.aboutMeTitle[lang]}></h2>
+    <p set:html={about.aboutMe[lang]}></p>
+  </div>
+

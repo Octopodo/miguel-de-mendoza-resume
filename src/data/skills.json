@@ -1,36 +1,50 @@
 {
-  "habilities": {
-    "motionGraphics": {
-      "principlesOfTraditionalAnimation": {
+  "title": {
+    "en": "Skills",
+    "es": "Habilidades"
+  },
+  "animation": {
+    "title": {
+      "en": "Animation",
+      "es": "Animación"
+    },
+    "skills": [
+      {
         "en": "12 Principles of Animation",
         "es": "Los 12 Principios de Animación Tradicional"
       },
-      "cutOutAnimation": {
+      {
         "en": "Cut out animation",
         "es": "Animacion Cut Out"
       },
-      "rigs": {
+      {
         "en": "Character Rigs",
         "es": "Rigsde Personaje"
       },
-      "scriptingForAnimation": {
+      {
         "en": "Scripting for animation and motion graphics",
         "es": "Scripting para animación  y motion graphics"
       }
+    ]
+  },
+  "dev": {
+    "title": {
+      "en": "Development",
+      "es": "Desarrollo y Programación"
     },
-    "development": {
-      "cleanCode": {
+    "skills": [
+      {
         "en": "Clean Code",
         "es": "Código limpio"
       },
-      "userInterfaceUXDesign": {
+      {
         "en": "User interface (UI)/user experience (UX) design",
         "es": "Diseño de interfaz (UI/UX)"
       },
-      "responsiveDesign": {
+      {
         "en": "Responsive design",
         "es": "Diseño responsive"
       }
-    }
+    ]
   }
 }

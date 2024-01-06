@@ -1,18 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import about from '../data/personalInfo.json'
-import { Image } from 'astro:assets';
-const portrait = '/public/self-portrait.png'
-const lang = 'en'
+import Section from '../components/Section.astro'
+
+import Home from  '../sections/Home.astro'
+import About  from  '../sections/About.astro'
+import Skills from '../sections/Skills.astro'
+import Tech from  '../sections/Tech.astro'
+import Jobs  from  '../sections/Jobs.astro'
+import Projects from '../sections/Projects.astro'
+
 ---
 
 <BaseLayout >
-  <img class="inline" src={portrait} alt="A picture of Miguel de Mendoza" width="450">
-  <div class="inline-block">
-    <h1>{about.name[lang]}</h1>
-    <h2>{about.title[lang]}</h2>
-    <h3>{about.tagline[lang]}</h3>
-  </div>
-  <p>{about.aboutMe[lang]}</p>
+  <Section id="main">
+    <Home/>
+  </Section>
+  <Section id="about-me">
+    <About/>
+  </Section>
+  <Section id="portfolio">
+
+  </Section>
+  <Section id="skills">
+    <Skills/>
+  </Section>
+  <Section id="tech">
+    <Tech/>
+  </Section>
+
+  <Section id="jobs">
+    <Jobs/>
+  </Section>
+  
+  <Section id="projects">
+    <Projects/>
+  </Section>
 </BaseLayout>
 
+<style>
+#about-me{ 
+  margin-top:100px;
+}
+</style>../data/lang

@@ -1,9 +1,14 @@
 ---
 import navigation from '../data/navigation.json'
+import {lang } from '../data/lang.ts'
 
-const {lang='en'} = Astro.props
+
 ---
 
-<nav>
-  {navigation.map(link => <a href={link.url}>{link.name[lang as 'en' | 'es']}</a>)}
+<nav class="sticky top-0">
+  {navigation.map(link => 
+    <a 
+      href={link.url}
+
+    >{link.name[lang as 'en' | 'es']}</a>)}
 </nav>

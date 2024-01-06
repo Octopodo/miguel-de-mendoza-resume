@@ -1,9 +1,10 @@
 ---
 import CommonHead from '../components/CommonHead.astro'
+// import Navigation from '../components/vue/Navigation.vue'
 import Navigation from '../components/Navigation.astro'
-// import i18n from '../data/i18n.json'
-// let lang = navigator.language || 'en'
-// lang = lang.slice(0, 2) !== 'es' ? 'en' : 'es'
+import { ViewTransitions } from 'astro:transitions';
+
+
 ---
 <html lang="en">
   <CommonHead/>
@@ -14,10 +15,34 @@ import Navigation from '../components/Navigation.astro'
     to-slate-900 
     bg-no-repeat 
     w-screen 
-    h-screen"
+    min-h-screen
+    overflow-x-hidden
+    "
+    
   >
-    <Navigation/>
-    <slot/>
+    <Navigation />
+    
+    <div  class="
+      mx-auto 
+      max-w-full 
+      sm:max-w-[900px]
+    ">
+      <slot/>
+    </div>
   </body>
 
 </html>
+
+
+<style>
+  html{
+    scroll-behavior: smooth;
+  }
+
+
+@media(prefers-reduced-motion: reduce){
+  body{
+    scroll-behavior: auto;
+  }
+}
+</style>
