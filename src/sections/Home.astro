@@ -2,7 +2,8 @@
 
 import {lang} from '../data/lang.ts'
 import about from '../data/about.json'
-const portrait = '/public/self-portrait.png'
+import baseUrl from '../data/baseUrl.ts'
+const portrait = baseUrl + '/self-portrait.png'
 ---
 
 <img class="inline-block" src={portrait} alt="A picture of Miguel de Mendoza" width="450">
