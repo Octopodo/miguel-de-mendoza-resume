@@ -5,8 +5,7 @@ import Job from '../components/Job.astro'
 
 ---
 <h1>{projects.title[lang]}</h1>
-
-{projects.projects.map((project) => {
+{projects.projects.map((project) => (
   <Job schema={project}/>
-})}
+))}
 
