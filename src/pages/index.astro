@@ -1,8 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import about from '../data/personalInfo.json'
+import { Image } from 'astro:assets';
+const portrait = '/public/self-portrait.png'
+const lang = 'en'
 ---
 
-<BaseLayout>
-  Index
+<BaseLayout >
+  <img class="inline" src={portrait} alt="A picture of Miguel de Mendoza" width="450">
+  <div class="inline-block">
+    <h1>{about.name[lang]}</h1>
+    <h2>{about.title[lang]}</h2>
+    <h3>{about.tagline[lang]}</h3>
+  </div>
+  <p>{about.aboutMe[lang]}</p>
 </BaseLayout>
 
