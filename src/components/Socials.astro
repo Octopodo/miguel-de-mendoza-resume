@@ -1,0 +1,49 @@
+---
+import SocialWidget from './SocialWidget.astro'
+import IconGithub from './icons/IconGithub.astro'
+import IconStackOverflow from './icons/IconStackOverflow.astro'
+import IconVimeo from './icons/IconVimeo.astro'
+import IconMail from './vue/icons/IconMail.vue'
+const urls = {
+  github: 'https://github.com/Octopodo',
+  vimeo:'https://vimeo.com/749369651'
+}
+
+const showNames = false
+---
+<div  class="
+  fixed 
+  right-0 
+  flex 
+  flex-col 
+  pl-2
+  pr-5 
+  cursor-pointer
+  bg-red-500  
+  rounded-l-[20px] 
+  shadow-lg
+  transition-width 
+  duration-[300ms]
+  ease-in-out 
+  w-10 
+  hover:w-12
+  "
+>
+  <SocialWidget href={urls.github} class="py-4">
+    <IconGithub class="size-6 inline"/>
+    {showNames && <h3 class="md:inline hidden">Github</h3>}
+  </SocialWidget>
+  <SocialWidget href={urls.github} class="py-4">
+    <IconStackOverflow class="size-6 inline"/>
+    {showNames && <h3 class="md:inline hidden">Stack Overflow</h3>}
+  </SocialWidget>
+  <SocialWidget href={urls.vimeo} class="py-4">
+    <IconVimeo class="size-6 inline"/>
+    {showNames &&<h3 class=" md:inline hidden">Vimeo</h3>}
+  </SocialWidget>
+  <SocialWidget  class="cursor-pointer py-4">
+    <IconMail className="size-6 inline-block"/>
+    {showNames &&<h3 class="md:inline hidden">Vimeo</h3>}
+  </SocialWidget>
+  
+</div>

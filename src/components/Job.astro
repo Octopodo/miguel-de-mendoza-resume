@@ -1,7 +1,6 @@
 ---
 import {lang} from '../data/lang'
 const {schema} = Astro.props
-console.log('SCHEMA', schema)
 ---
 <h3>{schema.period[lang]}</h3>
 <h2 set:html={schema.name[lang]}></h2>
