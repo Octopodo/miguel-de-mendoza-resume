@@ -3,12 +3,15 @@ import CommonHead from '../components/CommonHead.astro'
 // import Navigation from '../components/vue/Navigation.vue'
 import Navigation from '../components/Navigation.astro'
 import Socials from '../components/Socials.astro'
-
+import  '../assets/styles/main.css'
 ---
-<html lang="en">
+<html lang="en" >
   <CommonHead/>
   <body class="
-    text-slate-50
+    font-secondary
+    font-thin
+    text-md
+    text-primary
     bg-gradient-to-b 
     from-zinc-950 
     to-slate-900 
@@ -34,13 +37,12 @@ import Socials from '../components/Socials.astro'
 
 
 <style>
-  html{
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-
-@media(prefers-reduced-motion: reduce){
-  body{
+@media (prefers-reduced-motion: reduce) {
+  body {
     scroll-behavior: auto;
   }
 }
