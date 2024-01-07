@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colors.blue[500], // Color principal de la marca
+        primary: colors.slate[50], // Color principal de la marca
         secondary: colors.green[500], // Color secundario de la marca
         accent: colors.purple[500], // Color de acento para elementos destacados
         background: colors.gray[100], // Color de fondo principal
@@ -20,6 +20,23 @@ export default {
         onSecondary: colors.white, // Color de texto y iconos cuando el fondo es 'secondary'
         onBackground: colors.gray[900], // Color de texto e iconos cuando el fondo es 'background'
         onSurface: colors.gray[900] // Color de texto e iconos cuando el fondo es 'surface'
+      },
+      fontFamily: {
+        primary: ['"Exo 2"', 'sans-serif'],
+        secondary: ['Ubuntu', 'sans-serif']
+      },
+      fontSize: {
+        xxs: '.5rem',
+        xs: '.75rem',
+        sm: '.875rem',
+        base: '1rem',
+        lg: '1.125rem',
+        xl: '1.25rem'
+      },
+      fontWeight: {
+        thin: 100,
+        medium: 500,
+        bold: 800
       }
     }
   },
