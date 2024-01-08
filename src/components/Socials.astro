@@ -11,40 +11,65 @@ const urls = {
 
 const showNames = false
 ---
+<!-- <div class="h-screen">
+
+  
+</div> -->
 <div  class="
-  fixed 
-  right-0 
-  top-0
+  border-2 
+  border-dark
+  hover:border-primary
+  w-[fit-content]
+  sticky 
+  bottom-2
+  left-1/2
   flex 
-  flex-col 
-  pl-2
-  pr-5 
+  flex-row 
   cursor-pointer
-  bg-accent  
-  rounded-l-[20px] 
+  bg-deactivated
+  hover:bg-accent 
+  rounded-[30px] 
   shadow-lg
-  transition-width 
-  duration-[300ms]
-  ease-in-out 
-  w-10 
-  hover:w-12
-  "
+
+  transform-gpu translate-x-[-50%] translate-y-[70%]
+  transition-transform duration-300 ease-in-out 
+  motion-reduce:transition-none motion-reduce:hover:transform-none
+  transition-colors
+  hover:translate-y-0
+"
 >
-  <SocialWidget href={urls.github} class="py-4">
+  <SocialWidget href={urls.github} class="pt-1 pb-2 px-3">
     <IconGithub class="size-6 inline"/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
   </SocialWidget>
-  <SocialWidget href={urls.github} class="py-4">
+  <SocialWidget href={urls.github} class="pt-1 pb-2 px-3">
     <IconStackOverflow class="size-6 inline"/>
     {showNames && <h3 class="md:inline hidden">Stack Overflow</h3>}
   </SocialWidget>
-  <SocialWidget href={urls.vimeo} class="py-4">
+  <SocialWidget href={urls.vimeo} class="pt-1 pb-2 px-3">
     <IconVimeo class="size-6 inline"/>
     {showNames &&<h3 class=" md:inline hidden">Vimeo</h3>}
   </SocialWidget>
-  <SocialWidget  class="cursor-pointer py-4">
+  <SocialWidget  class="cursor-pointer pt-1 pb-2 px-3">
     <IconMail className="size-6 inline-block"/>
     {showNames &&<h3 class="md:inline hidden">Vimeo</h3>}
   </SocialWidget>
   
 </div>
+
+<style>
+.socials {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  background-color: #FBC02D;
+}
+
+.socials:hover {
+  transform: translateX(-50%) translateY(0);
+  
+}
+
+</style>

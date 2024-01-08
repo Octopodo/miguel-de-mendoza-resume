@@ -10,6 +10,7 @@ export default {
         primary: '#b9b9b9', // Gris Claro
         secondary: '#FFEE58', // Naranja Claro
         accent: '#FF6E40', // Color de acento para elementos destacados
+        deactivated: '#6D4C41',
         dark: '#494949', // Gris
         darken: '#0d0d0df5' // Gris Oscuro
       },
