@@ -4,11 +4,37 @@ import {lang } from '../data/lang.ts'
 
 
 ---
+<div class="sticky">
 
-<nav class="sticky top-0 max-w-full m-0 p-0 overflow-x-hidden">
-  {navigation.map(link => 
-    <a 
-      href={link.url}
 
-    >{link.name[lang as 'en' | 'es']}</a>)}
-</nav>
+  <nav class="
+    flex
+    flex-col
+    top-0 
+   
+    
+  ">
+    {navigation.map(link => 
+      <a 
+        href={link.url}
+        class="
+          
+          p-2 
+          m-0 
+          text-sm 
+          font-secondary
+          font-bold
+          hover:text-on-secondary
+          hover:bg-gray-100 
+          transition-colors 
+          duration-200 
+          ease-in-out 
+          border-b-2 
+          border-transparent 
+          hover:border-gray-900"
+      >{link.name[lang as 'en' | 'es']}</a>)}
+  </nav>
+</div>
+
+
+

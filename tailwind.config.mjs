@@ -17,7 +17,7 @@ export default {
         success: colors.green[500], // Color para mensajes de éxito
         info: colors.blue[300], // Color para mensajes de información
         onPrimary: colors.white, // Color de texto y iconos cuando el fondo es 'primary'
-        onSecondary: colors.white, // Color de texto y iconos cuando el fondo es 'secondary'
+        onSecondary: colors.red[600], // Color de texto y iconos cuando el fondo es 'secondary'
         onBackground: colors.gray[900], // Color de texto e iconos cuando el fondo es 'background'
         onSurface: colors.gray[900] // Color de texto e iconos cuando el fondo es 'surface'
       },

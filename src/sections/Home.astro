@@ -6,8 +6,9 @@ import baseUrl from '../data/baseUrl.ts'
 const portrait = baseUrl + '/self-portrait.png'
 ---
 
-<img class="inline-block" src={portrait} alt="A picture of Miguel de Mendoza" width="450">
-<div class="inline-block">
+
+<img  src={portrait} alt="A picture of Miguel de Mendoza" width="200">
+<div >
   <h1 set:html={about.name[lang]}></h1>
   <h2 set:html={about.title[lang]}></h2>
   <h3 set:html={about.tagline[lang]}></h3>
