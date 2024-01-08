@@ -1,19 +1,19 @@
 ---
 import navigation from '../data/navigation.json'
-import {lang } from '../data/lang.ts'
+import {lang} from '../data/lang.ts'
 
-
+const {class: className} = Astro.props
 ---
-<div class="sticky">
 
 
-  <nav class="
+  <nav class={`
     flex
     flex-col
     top-0 
-   
-    
-  ">
+    self-start
+    sticky
+    ${className}
+  `}>
     {navigation.map(link => 
       <a 
         href={link.url}
@@ -21,7 +21,8 @@ import {lang } from '../data/lang.ts'
           
           p-2 
           m-0 
-          text-sm 
+          text-xl
+          sm:text-sm 
           font-secondary
           font-bold
           hover:text-on-secondary
@@ -34,7 +35,6 @@ import {lang } from '../data/lang.ts'
           hover:border-gray-900"
       >{link.name[lang as 'en' | 'es']}</a>)}
   </nav>
-</div>
 
 
 

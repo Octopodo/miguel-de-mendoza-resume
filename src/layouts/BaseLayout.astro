@@ -12,19 +12,22 @@ import  '../assets/styles/main.css'
     font-thin
     text-md
     text-primary
+    text-xl
     bg-gradient-to-b 
-    from-zinc-950 
-    to-slate-900 
+    from-darken
+    to-dark 
     bg-no-repeat 
     w-full 
     min-h-screen
     grid
-    grid-cols-[150px_1fr]
+    grid-cols-[120px_1fr]
+    mx-auto
+    max-w-[900px]
     "
   >
-    <Navigation/>
-    <Socials/>
-    <div  class="">
+  <Socials/>
+  <Navigation/>
+  <div  class="">
       <slot/>
     </div>
   </body>

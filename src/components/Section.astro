@@ -4,7 +4,7 @@ const {class: className} = Astro.props
 
 <section
   {...Astro.props}
-  class={ className }
+  class={ `relative inline-block${className}` }
 >
   <slot />
 </section>
