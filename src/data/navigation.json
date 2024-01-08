@@ -1,52 +1,24 @@
 [
   {
     "name": {
-      "en": "Home",
-      "es": "Inicio"
+      "en": "Animation",
+      "es": "Animación"
     },
-    "url": "#"
+    "url": "#animation"
   },
   {
     "name": {
-      "en": "About me",
-      "es": "Sobre mí"
+      "en": "Development",
+      "es": "Deasrrollo"
     },
-    "url": "#about-me"
+    "url": "#dev"
   },
   {
     "name": {
-      "en": "Portfolio",
-      "es": "Portafolio"
+      "en": "Web Programming",
+      "es": "Programación Web"
     },
-    "url": "#portfolio"
-  },
-  {
-    "name": {
-      "en": "Skills",
-      "es": "Habilidades"
-    },
-    "url": "#skills"
-  },
-  {
-    "name": {
-      "en": "Technologies",
-      "es": "Tecnologías"
-    },
-    "url": "#tech"
-  },
-  {
-    "name": {
-      "en": "Work",
-      "es": "Trabajos"
-    },
-    "url": "#jobs"
-  },
-  {
-    "name": {
-      "en": "Projects",
-      "es": "Proyectos"
-    },
-    "url": "#projects"
+    "url": "#web"
   },
   {
     "name": {

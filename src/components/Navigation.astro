@@ -9,30 +9,19 @@ const {class: className} = Astro.props
   <nav class={`
     flex
     flex-col
-    top-0 
-    self-start
-    sticky
+    
     ${className}
   `}>
     {navigation.map(link => 
       <a 
         href={link.url}
         class="
-          
-          p-2 
-          m-0 
-          text-xl
-          sm:text-sm 
-          font-secondary
-          font-bold
-          hover:text-on-secondary
-          hover:bg-gray-100 
-          transition-colors 
-          duration-200 
-          ease-in-out 
-          border-b-2 
-          border-transparent 
-          hover:border-gray-900"
+        
+        whitespace-wrap
+        text-2xl
+        text-medium
+        
+        "
       >{link.name[lang as 'en' | 'es']}</a>)}
   </nav>
 

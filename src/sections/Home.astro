@@ -3,6 +3,8 @@
 import {lang} from '../data/lang.ts'
 import about from '../data/about.json'
 import baseUrl from '../data/baseUrl.ts'
+
+import Navigation from '../components/Navigation.astro'
 const portrait = baseUrl + '/self-portrait.png'
 ---
 
@@ -28,33 +30,43 @@ const portrait = baseUrl + '/self-portrait.png'
 
       "
   >
-    <h1 
-    class="
-      whitespace-nowrap
-      text-4xl
-      md:text-7xl
-      font-secondary
-      font-bold
-      text-secondary
-      italic
-      mb-2
+    <a 
+      id="home-button"
+      href="#" 
+      class="
+        whitespace-nowrap
+        text-4xl
+        md:text-7xl
+        font-secondary
+        font-bold
+        text-secondary
+        italic
+        mb-2
+        transition-all duration-500 ease-in-out
       "
       set:html={about.name[lang]}
-    ></h1>
-    <h2
+    ></a>
+    <Navigation/>
+    <!-- <h2
       class="
         whitespace-wrap
         text-2xl
         text-medium
         " 
       set:html={about.title[lang]}
-    ></h2>
-    <h3
-      class="
-        text-xl
-        font-medium
-        " 
-      set:html={about.tagline[lang]}
-    ></h3>
+    ></h2> -->
   </div>
 </div>
+
+
+<script>
+  const homeButton = document.getElementById('home-button');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) { // ajusta este valor según tus necesidades
+      homeButton?.classList.add('fixed', 'top-0', 'left-0');
+    } else {
+      homeButton?.classList.remove('fixed', 'top-0', 'left-0','transform');
+    }
+  });
+</script>
