@@ -1,29 +1,79 @@
 ---
 import navigation from '../data/navigation.json'
 import {lang} from '../data/lang.ts'
-
+import about from '../data/about.json'
 const {class: className} = Astro.props
 ---
 
 
-  <nav class={`
-    flex
-    flex-col
-    
-    ${className}
-  `}>
-    {navigation.map(link => 
-      <a 
-        href={link.url}
-        class="
-        
-        whitespace-wrap
-        text-4xl
-        text-medium
-        
-        "
-      >{link.name[lang as 'en' | 'es']}</a>)}
-  </nav>
+
+
+
+<nav class={`
+  fixed
+  flex
+  flex-col
+  text-right
+  items-end
+  z-40
+  ${className}
+`}>
+  <a 
+    id="home-button"
+    href="#" 
+    class="
+      whitespace-nowrap
+      text-4xl
+      md:text-8xl
+      font-secondary
+      font-bold
+      text-secondary
+      italic
+      mb-2
+      transition-all duration-500 ease-in-out
+    "
+    set:html={about.name[lang]}
+  
+  ></a>
+  {navigation.map(link => 
+    <a 
+      href={link.url}
+      class="
+      accordionElement
+      whitespace-wrap
+      text-4xl
+      text-medium
+      inline-block
+      "
+    >{link.name[lang as 'en' | 'es']}</a>)}
+</nav>
+
+
+<script> 
+  const accordionElements = document.querySelectorAll('.accordionElement');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // ajusta este valor según tus necesidades
+      accordionElements.forEach(element => {
+        element.classList.add('collapse')
+      });
+    } else {
+      accordionElements.forEach(element => {
+        element.classList.remove('collapse');
+      });
+    }
+  });
+</script>
+
+<style>
+.accordionElement {
+  transform: scaleY(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.collapse {
+  transform: scaleY(0);
+}
+</style>
 
 
 

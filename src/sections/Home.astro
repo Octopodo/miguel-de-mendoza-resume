@@ -17,36 +17,21 @@ const portrait = baseUrl + '/self-portrait.png'
       w-[250px] 
       md:w-[640px]
       mt-[8%]
+      z-50
     "
   >
   <div 
     class="
       absolute
       align-top
-      text-left
-      text-right
+      
       inline-block
       left-[10%]
 
       "
   >
-    <a 
-      id="home-button"
-      href="#" 
-      class="
-        whitespace-nowrap
-        text-4xl
-        md:text-8xl
-        font-secondary
-        font-bold
-        text-secondary
-        italic
-        mb-2
-        transition-all duration-500 ease-in-out
-      "
-      set:html={about.name[lang]}
-    ></a>
-    <Navigation/>
+    
+    
     <!-- <h2
       class="
         whitespace-wrap
@@ -59,14 +44,3 @@ const portrait = baseUrl + '/self-portrait.png'
 </div>
 
 
-<script>
-  const homeButton = document.getElementById('home-button');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) { // ajusta este valor según tus necesidades
-      homeButton?.classList.add('fixed', 'top-0', 'left-0');
-    } else {
-      homeButton?.classList.remove('fixed', 'top-0', 'left-0','transform');
-    }
-  });
-</script>
