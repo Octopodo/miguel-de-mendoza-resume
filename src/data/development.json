@@ -1,0 +1,58 @@
+{
+  "title": {
+    "en": "Development",
+    "es": "Desarrollo"
+  },
+  "projects": [
+    {
+      "period": {
+        "es": "",
+        "en": ""
+      },
+      "name": {
+        "es": "Fretboard Master",
+        "en": "Fretboard Master"
+      },
+      "description": {
+        "es": "Aprovechando mis conocimientos musicales, aprendizaje de guitarra y programación, estoy desarrollando una aplicación web para estudiar el diapasón de la guitarra. Entre otras funciones, la aplicación puede generar más de 300 escalas, crear posiciones de dedos y generar secuencias aleatorias con un metrónomo. Tecnologías: Javascript, VueJs.",
+        "en": "Taking advantage of my musical knowledge, guitar learning, and programming, I am developing a web application to study the guitar fretboard. Among other features, the application can generate over 300 scales, create finger positions, and generate random sequences with a metronome. Technologies: Javascript, VueJs."
+      },
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "link": {
+        "url": "",
+        "title": {
+          "es": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "period": {
+        "es": "",
+        "en": ""
+      },
+      "name": {
+        "es": "KT Bundle",
+        "en": "KT Bundle"
+      },
+      "description": {
+        "es": "Desarrollé mi propio framework para las APIs de Photoshop, After Effects y Adobe Animate, con el objetivo de crear herramientas sólidas para estos programas de manera rápida y según la demanda del proyecto. Tecnologías: Adobe Extendscript, Adobe CEP, Javascript y VueJs.",
+        "en": "Developed my own framework for the APIs of Photoshop, After Effects, and Adobe Animate, with the goal of creating robust tools for these programs quickly and according to the demands of the project. Technologies: Adobe Extendscript, Adobe CEP, Javascript, and VueJs."
+      },
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "link": {
+        "url": "",
+        "title": {
+          "es": "",
+          "en": ""
+        }
+      }
+    }
+  ]
+}

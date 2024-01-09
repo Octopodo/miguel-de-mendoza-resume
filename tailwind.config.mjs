@@ -16,7 +16,7 @@ export default {
       },
       fontFamily: {
         primary: ['"Exo 2"', 'sans-serif'],
-        secondary: ['Ubuntu', 'sans-serif']
+        secondary: ['Oswald', 'sans-serif']
       },
       fontSize: {
         xxs: '.5rem',
@@ -30,6 +30,10 @@ export default {
         thin: 100,
         medium: 500,
         bold: 800
+      },
+      textShadow: {
+        outline:
+          '2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000'
       }
     }
   },

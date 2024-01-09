@@ -3,7 +3,7 @@
 import {lang} from '../data/lang.ts'
 import about from '../data/about.json'
 import baseUrl from '../data/baseUrl.ts'
-
+import { config } from '../config/appConfig'
 import Navigation from '../components/Navigation.astro'
 const portrait = baseUrl + '/self-portrait.png'
 ---
@@ -12,13 +12,13 @@ const portrait = baseUrl + '/self-portrait.png'
   <img  
     src={portrait} 
     alt="A picture of Miguel de Mendoza" 
-    class="
+    class={`
       inline-block
       w-[250px] 
-      md:w-[640px]
+      ${config.breakpoint}:w-[640px]
       mt-[8%]
       z-50
-    "
+    `}
   >
   <div 
     class="

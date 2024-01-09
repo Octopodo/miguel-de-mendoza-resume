@@ -1,0 +1,83 @@
+{
+  "title": {
+    "en": "Animation",
+    "es": "Animación"
+  },
+  "projects": [
+    {
+      "period": {
+        "es": "Jun 2021 - May 2022",
+        "en": "Jun 2021 - May 2022"
+      },
+      "name": {
+        "es": "Desarrollo Completo de Serie Animada para YouTube",
+        "en": "Full Development of Animated Series for YouTube"
+      },
+      "description": {
+        "es": "Gestión integral de proyecto utilizando Toon Boom Harmony, Character Animator y After Effects. Responsable de todas las fases: guión, animación, música, doblaje, efectos visuales, entre otros.",
+        "en": "Full project management using Toon Boom Harmony, Character Animator, and After Effects. Responsible for all phases: script, animation, music, dubbing, visual effects, among others."
+      },
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "link": {
+        "url": "",
+        "title": {
+          "es": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "period": {
+        "es": "Oct 2016 - Jun 2021",
+        "en": "Oct 2016 - Jun 2021"
+      },
+      "name": {
+        "es": "Freelance - Desarrollo Integral de Piezas de Animación y Postproducción de Video",
+        "en": "Freelance - Full Development of Animation Pieces and Video Post-Production"
+      },
+      "description": {
+        "es": "Colaboración freelance en la productora Tachananchanan y roles diversos en Forpro.tv y Ejecon. Tareas incluyeron animación con After Effects, soporte de producción, técnico de croma, operador de cámara y sonorización en eventos.",
+        "en": "Freelance collaboration with the Tachananchanan production company and various roles at Forpro.tv and Ejecon. Tasks included animation with After Effects, production support, chroma technician, camera operator, and sound reinforcement at events."
+      },
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "link": {
+        "url": "",
+        "title": {
+          "es": "",
+          "en": ""
+        }
+      }
+    },
+    {
+      "period": {
+        "es": "Sept-Oct 2016",
+        "en": "Sept-Oct 2016"
+      },
+      "name": {
+        "es": "Grafista en Lucky Road",
+        "en": "Graphic Designer at Lucky Road"
+      },
+      "description": {
+        "es": "Creación de grafismos para el programa de Disney Channel 'Boca-zas'. Desarrollo de automatización para la creación eficiente de material gráfico.",
+        "en": "Creation of graphics for the Disney Channel program 'Boca-zas'. Development of automation for efficient creation of graphic material."
+      },
+      "image": {
+        "url": "",
+        "alt": ""
+      },
+      "link": {
+        "url": "",
+        "title": {
+          "es": "",
+          "en": ""
+        }
+      }
+    }
+  ]
+}
