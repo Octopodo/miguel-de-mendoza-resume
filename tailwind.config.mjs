@@ -24,7 +24,8 @@ export default {
         sm: '.875rem',
         base: '1rem',
         lg: '1.125rem',
-        xl: '1.25rem'
+        xl: '1.25rem',
+        '10xl': '10rem'
       },
       fontWeight: {
         thin: 100,
@@ -34,6 +35,10 @@ export default {
       textShadow: {
         outline:
           '2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000'
+      },
+      screens: {
+        '3xl': '1920px',
+        '4xl': '2200px'
       }
     }
   },
