@@ -3,7 +3,7 @@
 import {lang} from '../data/lang.ts'
 import about from '../data/about.json'
 import baseUrl from '../data/baseUrl.ts'
-import { config } from '../config/appConfig'
+import { breakpoint } from '../config/appConfig'
 import Navigation from '../components/Navigation.astro'
 const portrait = baseUrl + '/self-portrait.png'
 ---
@@ -15,7 +15,7 @@ const portrait = baseUrl + '/self-portrait.png'
     class={`
       inline-block
       w-[250px] 
-      ${config.breakpoint}:w-[640px]
+      lg:w-[640px]
       mt-[8%]
       z-50
     `}

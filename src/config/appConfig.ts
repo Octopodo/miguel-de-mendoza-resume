@@ -1,3 +1,1 @@
-export const config = {
-  breakpoint: 'lg'
-}
+export const breakpoint = 'lg'

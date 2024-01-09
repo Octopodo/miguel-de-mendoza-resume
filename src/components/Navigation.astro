@@ -2,7 +2,7 @@
 import navigation from '../data/navigation.json'
 import {lang} from '../data/lang.ts'
 import about from '../data/about.json'
-import {config} from '../config/appConfig'
+import {breakpoint} from '../config/appConfig'
 const {class: className} = Astro.props
 
 ---
@@ -40,7 +40,7 @@ const {class: className} = Astro.props
     class={`
       whitespace-nowrap
       text-4xl
-      ${config.breakpoint}:text-9xl
+      lg:text-9xl
       font-secondary
       font-bold
       text-secondary
