@@ -2,14 +2,11 @@
 import navigation from '../data/navigation.json'
 import {lang} from '../data/lang.ts'
 import about from '../data/about.json'
+
 import {breakpoint} from '../config/appConfig'
 const {class: className} = Astro.props
 
 ---
-
-
-
-
 
 <nav class={`
   text-right
@@ -24,6 +21,7 @@ const {class: className} = Astro.props
     z-10
     opacity-0
     w-screen
+    top-0
     "
 
   ></div>
@@ -58,35 +56,39 @@ const {class: className} = Astro.props
     set:html={about.name[lang]}
   
   ></a>
-  {navigation.map(link => 
-    <div>
-    
-      <a 
-        href={link.url}
-        class="
-        inline-block
-        accordionElement
-        whitespace-wrap
-        text-5xl
-        text-medium
-        text-primary
-        mb-1
-
-        "
-      >{link.name[lang as 'en' | 'es']}
-        <div 
-          class="
-            hover-line
-            bg-secondary 
-            w-[25rem]  
-            h-[2px]"
-          ></div>
-      </a>
-
+  <div class="navigator">
+    {navigation.map(link => 
+      <div>
       
+        <a 
+          href={link.url}
+          class="
+          inline-block
+          accordionElement
+          whitespace-wrap
+          text-5xl
+          text-medium
+          text-lighter
+          mb-1
+          hover:text-secondary  
+          "
+        >{link.name[lang as 'en' | 'es']}
+          <div 
+            class="
+              hover-line
+              bg-primary 
+              w-[25rem]  
+              h-[2px]"
+            ></div>
+        </a>
+  
+        
+    </div>
+      )}
+      
+
+
   </div>
-    )}
-    
   </div>
 </nav>
 
@@ -117,8 +119,16 @@ const {class: className} = Astro.props
 }
 
 #home-button {
-  --stroke-color: theme('colors.accent');
-  text-shadow: rgb(255, 110, 64) 5px 0px 0px, rgb(255, 110, 64) 4.90033px 0.993347px 0px, rgb(255, 110, 64) 4.60531px 1.94709px 0px, rgb(255, 110, 64) 4.12668px 2.82321px 0px, rgb(255, 110, 64) 3.48353px 3.58678px 0px, rgb(255, 110, 64) 2.70151px 4.20736px 0px, rgb(255, 110, 64) 1.81179px 4.6602px 0px, rgb(255, 110, 64) 0.849836px 4.92725px 0px, rgb(255, 110, 64) -0.145998px 4.99787px 0px, rgb(255, 110, 64) -1.13601px 4.86924px 0px, rgb(255, 110, 64) -2.08073px 4.54649px 0px, rgb(255, 110, 64) -2.94251px 4.04248px 0px, rgb(255, 110, 64) -3.68697px 3.37732px 0px, rgb(255, 110, 64) -4.28444px 2.57751px 0px, rgb(255, 110, 64) -4.71111px 1.67494px 0px, rgb(255, 110, 64) -4.94996px 0.7056px 0px, rgb(255, 110, 64) -4.99147px -0.291871px 0px, rgb(255, 110, 64) -4.83399px -1.27771px 0px, rgb(255, 110, 64) -4.48379px -2.2126px 0px, rgb(255, 110, 64) -3.95484px -3.05929px 0px, rgb(255, 110, 64) -3.26822px -3.78401px 0px, rgb(255, 110, 64) -2.4513px -4.35788px 0px, rgb(255, 110, 64) -1.53666px -4.75801px 0px, rgb(255, 110, 64) -0.560763px -4.96845px 0px, rgb(255, 110, 64) 0.437495px -4.98082px 0px, rgb(255, 110, 64) 1.41831px -4.79462px 0px, rgb(255, 110, 64) 2.34258px -4.41727px 0px, rgb(255, 110, 64) 3.17346px -3.86382px 0px, rgb(255, 110, 64) 3.87783px -3.15633px 0px, rgb(255, 110, 64) 4.4276px -2.32301px 0px, rgb(255, 110, 64) 4.80085px -1.39708px 0px, rgb(255, 110, 64) 4.98271px -0.415447px 0px;
+  --stroke-color: theme('colors.primary-accent');
+  --stroke-dark: theme('colors.primary-dark');
+  /* text-shadow: var(--stroke-color) 1px 0px 0px, var(--stroke-color) 0.540302px 0.841471px 0px, var(--stroke-color) -0.416147px 0.909297px 0px, var(--stroke-color) -0.989992px 0.14112px 0px, var(--stroke-color) -0.653644px -0.756802px 0px, var(--stroke-color) 0.283662px -0.958924px 0px, var(--stroke-color) 0.96017px -0.279415px 0px; */
+  /* text-shadow: var(--stroke-color) 2px 0px 0px, var(--stroke-color) 1.75517px 0.958851px 0px, var(--stroke-color) 1.0806px 1.68294px 0px, var(--stroke-color) 0.141474px 1.99499px 0px, var(--stroke-color) -0.832294px 1.81859px 0px, var(--stroke-color) -1.60229px 1.19694px 0px, var(--stroke-color) -1.97998px 0.28224px 0px, var(--stroke-color) -1.87291px -0.701566px 0px, var(--stroke-color) -1.30729px -1.5136px 0px, var(--stroke-color) -0.421592px -1.95506px 0px, var(--stroke-color) 0.567324px -1.91785px 0px, var(--stroke-color) 1.41734px -1.41108px 0px, var(--stroke-color) 1.92034px -0.558831px 0px; */
+  text-shadow: var(--stroke-dark) 1px 0px 0px, var(--stroke-dark) 0.540302px 0.841471px 0px, var(--stroke-dark) -0.416147px 0.909297px 0px, var(--stroke-dark) -0.989992px 0.14112px 0px, var(--stroke-dark) -0.653644px -0.756802px 0px, var(--stroke-dark) 0.283662px -0.958924px 0px, var(--stroke-dark) 0.96017px -0.279415px 0px
+  ,var(--stroke-color) 3px 0px 0px, var(--stroke-color) 2.83487px 0.981584px 0px, var(--stroke-color) 2.35766px 1.85511px 0px, var(--stroke-color) 1.62091px 2.52441px 0px, var(--stroke-color) 0.705713px 2.91581px 0px, var(--stroke-color) -0.287171px 2.98622px 0px, var(--stroke-color) -1.24844px 2.72789px 0px, 
+  var(--stroke-color) -2.07227px 2.16926px 0px, var(--stroke-color) -2.66798px 1.37182px 0px, var(--stroke-color) -2.96998px 0.42336px 0px, var(--stroke-color) -2.94502px -0.571704px 0px, var(--stroke-color) -2.59586px -1.50383px 0px, var(--stroke-color) -1.96093px -2.27041px 0px, 
+  var(--stroke-color) -1.11013px -2.78704px 0px, var(--stroke-color) -0.137119px -2.99686px 0px, var(--stroke-color) 0.850987px -2.87677px 0px, var(--stroke-color) 1.74541px -2.43999px 0px, var(--stroke-color) 2.44769px -1.73459px 0px, var(--stroke-color) 2.88051px -0.838247px 0px,
+  var(--stroke-color) -1.11013px -2.78704px 0px, var(--stroke-color) -0.137119px -2.99686px 0px, var(--stroke-color) 0.850987px -2.87677px 0px, var(--stroke-color) 1.74541px -2.43999px 0px, var(--stroke-color) 2.44769px -1.73459px 0px, var(--stroke-color) 2.88051px -0.838247px 0px;
+  /* -webkit-text-stroke: 1px theme('colors.primary-dark'); */
 }
 
 .hover-line {
@@ -137,12 +147,6 @@ const {class: className} = Astro.props
 .accordionElement {
   transform: scaleY(1);
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-.accordionElement:hover {
-  --neon-color: theme('colors.secondary');
-  /* background: linear-gradient(transparent 90%, var(--neon-color) 90%); */
-  color: var(--neon-color);
-  /* box-shadow: inset 2px -44px 22px -35px rgba(255,238,88,0.5); */
 }
 
 .collapse {

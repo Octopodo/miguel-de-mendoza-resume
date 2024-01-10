@@ -1,14 +1,12 @@
 ---
-
 import {lang} from '../data/lang.ts'
-import about from '../data/about.json'
 import baseUrl from '../data/baseUrl.ts'
-import { breakpoint } from '../config/appConfig'
-import Navigation from '../components/Navigation.astro'
+import IconCarrousel from '../components/vue/IconCarrousel.vue'
+
 const portrait = baseUrl + '/self-portrait.png'
 ---
 
-<div class="relative top-10">
+<div class="relative top-10 home">
   <img  
     src={portrait} 
     alt="A picture of Miguel de Mendoza" 
@@ -22,6 +20,9 @@ const portrait = baseUrl + '/self-portrait.png'
       md:ml-[2%]
       mt-[10%]
       z-50
+      transition-transform duration-200 ease-in-out 
+      hover:scale-[1.02]
+      cursor-pointer
     `}
   >
   <div 
@@ -33,7 +34,8 @@ const portrait = baseUrl + '/self-portrait.png'
       left-[10%]
       "
   >
-    
+  
   </div>
+  <IconCarrousel/>
 </div>
 

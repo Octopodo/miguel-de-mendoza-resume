@@ -20,7 +20,6 @@ const showNames = false
   socials
   border-2 
   border-dark
-  hover:border-primary
   w-[fit-content]
   sticky 
   bottom-4
@@ -28,39 +27,68 @@ const showNames = false
   flex 
   flex-row 
   cursor-pointer
-  bg-deactivated
-  hover:bg-accent 
+  bg-primary-darken
   rounded-[30px] 
   shadow-lg
+  hover:bg-primary
+  hover:border-accent-dark
+  hover:translate-y-0
   transform-gpu translate-x-[-50%] translate-y-[70%]
   transition-transform duration-300 ease-in-out 
-  motion-reduce:transition-none motion-reduce:hover:transform-none
+  motion-reduce:transition-none 
+  motion-reduce:hover:transform-none
   transition-colors
-  hover:translate-y-0
 "
 >
-  <SocialWidget href={urls.github} class="pt-1 pb-2 px-3">
-    <IconBrandGithub class="size-6 inline text-ptimary"/>
+  <a href={urls.github} class="pt-1 pb-2 px-3" target="_blank">
+    <IconBrandGithub class={`
+      social-icon
+      size-6 
+      inline 
+      text-secondary-dark
+    `}/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
-  </SocialWidget>
-  <SocialWidget href={urls.stackOverflow} class="pt-1 pb-2 px-3">
-    <IconBrandStackoverflow class="size-6 inline text-ptimary"/>
+  </a>
+  <a href={urls.stackOverflow} class="pt-1 pb-2 px-3"  target="_blank">
+    <IconBrandStackoverflow class={`
+      social-icon
+      size-6 
+      inline 
+      text-secondary-dark
+    `}/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
-  </SocialWidget>
-  <SocialWidget href={urls.vimeo} class="pt-1 pb-2 px-3">
-    <IconBrandVimeo class="size-6 inline text-ptimary"/>
+  </a>
+  <a href={urls.vimeo} class="pt-1 pb-2 px-3"  target="_blank">
+    <IconBrandVimeo class={`
+      social-icon
+      size-6 
+      inline 
+      text-secondary-dark
+    `}/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
-  </SocialWidget>
-  <SocialWidget href={urls.github} class="pt-1 pb-2 px-3">
-    <IconMail class="size-6 inline text-ptimary"/>
+  </a>
+  <a href={urls.github} class="pt-1 pb-2 px-3"  target="_blank">
+    <IconMail class={`
+      social-icon
+      size-6 
+      inline 
+      text-secondary-dark
+    `}/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
-  </SocialWidget>
+  </a>
 
 
   
 </div>
 
 <style>
+.socials:hover .social-icon{
+  color: theme('colors.lighter')
+}
+
+.socials:hover .social-icon:hover{
+  color: theme('colors.secondary')
+}
 
 .socials::after {
   content: "";

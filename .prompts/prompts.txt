@@ -1,0 +1,2 @@
+COlORES CSS A JAVASCRIPT: 
+"Por favor, convierte el siguiente CSS en un objeto JavaScript, agrupa los colores por primary, secondary-1 y secondary-2, y cambia los nombres de las variantes a light, bright, medium, dark y darken. No incluyas las versiones rgb
