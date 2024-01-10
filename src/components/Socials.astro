@@ -8,7 +8,8 @@ import {
 } from '@tabler/icons-vue'
 const urls = {
   github: 'https://github.com/Octopodo',
-  vimeo:'https://vimeo.com/749369651'
+  vimeo:'https://vimeo.com/749369651',
+  stackOverflow: 'https://stackoverflow.com/users/4479087/miguel',
 }
 
 const showNames = false
@@ -42,11 +43,11 @@ const showNames = false
     <IconBrandGithub class="size-6 inline text-ptimary"/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
   </SocialWidget>
-  <SocialWidget href={urls.github} class="pt-1 pb-2 px-3">
+  <SocialWidget href={urls.stackOverflow} class="pt-1 pb-2 px-3">
     <IconBrandStackoverflow class="size-6 inline text-ptimary"/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
   </SocialWidget>
-  <SocialWidget href={urls.github} class="pt-1 pb-2 px-3">
+  <SocialWidget href={urls.vimeo} class="pt-1 pb-2 px-3">
     <IconBrandVimeo class="size-6 inline text-ptimary"/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
   </SocialWidget>
@@ -61,13 +62,15 @@ const showNames = false
 
 <style>
 
-.socials::before {
+.socials::after {
   content: "";
   position: absolute;
-  top: -15px;
-  right: -10px;
-  bottom: -10px;
-  left: -10px;
+  top: -20px;
+  bottom: -20px;
+  right: -15px;
+  left: -15px;
   cursor: pointer;
+  /* background-color: red; */
+  z-index: -1;
 }
 </style>

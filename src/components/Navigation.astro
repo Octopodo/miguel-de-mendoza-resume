@@ -29,7 +29,10 @@ const {class: className} = Astro.props
   ></div>
   <div class="
     absolute
-    flex flex-col  
+    flex 
+    flex-col  
+    flex-wrap
+    items-end
     left-1/2
     translate-x-[-50%]
     z-20
@@ -39,7 +42,7 @@ const {class: className} = Astro.props
     href="#" 
     class={`
       whitespace-nowrap
-      text-4xl
+      text-6xl
       lg:text-9xl
       4xl:text-10xl
       font-secondary
@@ -48,28 +51,43 @@ const {class: className} = Astro.props
       italic
       mb-2
       text-wide
+      mt-4
+      lg:mt-0
+      
     `}
     set:html={about.name[lang]}
   
   ></a>
   {navigation.map(link => 
-    <a 
-      href={link.url}
-      class="
-      accordionElement
-      whitespace-wrap
-      text-5xl
-      text-medium
-      text-primary
-      inline-block
-      pb-2
-      "
-    >{link.name[lang as 'en' | 'es']}</a>)}
+    <div>
+    
+      <a 
+        href={link.url}
+        class="
+        inline-block
+        accordionElement
+        whitespace-wrap
+        text-5xl
+        text-medium
+        text-primary
+        mb-1
 
+        "
+      >{link.name[lang as 'en' | 'es']}
+        <div 
+          class="
+            hover-line
+            bg-secondary 
+            w-[25rem]  
+            h-[2px]"
+          ></div>
+      </a>
 
+      
   </div>
-  
-  
+    )}
+    
+  </div>
 </nav>
 
 
@@ -102,13 +120,29 @@ const {class: className} = Astro.props
   --stroke-color: theme('colors.accent');
   text-shadow: rgb(255, 110, 64) 5px 0px 0px, rgb(255, 110, 64) 4.90033px 0.993347px 0px, rgb(255, 110, 64) 4.60531px 1.94709px 0px, rgb(255, 110, 64) 4.12668px 2.82321px 0px, rgb(255, 110, 64) 3.48353px 3.58678px 0px, rgb(255, 110, 64) 2.70151px 4.20736px 0px, rgb(255, 110, 64) 1.81179px 4.6602px 0px, rgb(255, 110, 64) 0.849836px 4.92725px 0px, rgb(255, 110, 64) -0.145998px 4.99787px 0px, rgb(255, 110, 64) -1.13601px 4.86924px 0px, rgb(255, 110, 64) -2.08073px 4.54649px 0px, rgb(255, 110, 64) -2.94251px 4.04248px 0px, rgb(255, 110, 64) -3.68697px 3.37732px 0px, rgb(255, 110, 64) -4.28444px 2.57751px 0px, rgb(255, 110, 64) -4.71111px 1.67494px 0px, rgb(255, 110, 64) -4.94996px 0.7056px 0px, rgb(255, 110, 64) -4.99147px -0.291871px 0px, rgb(255, 110, 64) -4.83399px -1.27771px 0px, rgb(255, 110, 64) -4.48379px -2.2126px 0px, rgb(255, 110, 64) -3.95484px -3.05929px 0px, rgb(255, 110, 64) -3.26822px -3.78401px 0px, rgb(255, 110, 64) -2.4513px -4.35788px 0px, rgb(255, 110, 64) -1.53666px -4.75801px 0px, rgb(255, 110, 64) -0.560763px -4.96845px 0px, rgb(255, 110, 64) 0.437495px -4.98082px 0px, rgb(255, 110, 64) 1.41831px -4.79462px 0px, rgb(255, 110, 64) 2.34258px -4.41727px 0px, rgb(255, 110, 64) 3.17346px -3.86382px 0px, rgb(255, 110, 64) 3.87783px -3.15633px 0px, rgb(255, 110, 64) 4.4276px -2.32301px 0px, rgb(255, 110, 64) 4.80085px -1.39708px 0px, rgb(255, 110, 64) 4.98271px -0.415447px 0px;
 }
+
+.hover-line {
+  width: 100%;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.accordionElement:hover .hover-line {
+  transform: scaleX(1);
+  opacity: 100%;
+}
+
 .accordionElement {
   transform: scaleY(1);
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .accordionElement:hover {
   --neon-color: theme('colors.secondary');
-  background: linear-gradient(transparent 90%, var(--neon-color) 90%);
+  /* background: linear-gradient(transparent 90%, var(--neon-color) 90%); */
+  color: var(--neon-color);
+  /* box-shadow: inset 2px -44px 22px -35px rgba(255,238,88,0.5); */
 }
 
 .collapse {
@@ -122,6 +156,8 @@ const {class: className} = Astro.props
   height: 140px;
   box-shadow: 0px 8px 5px -8px rgba(0,0,0,0.75);
 }
+
+
 </style>
 
 

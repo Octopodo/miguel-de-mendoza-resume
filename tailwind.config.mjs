@@ -9,6 +9,7 @@ export default {
       colors: {
         primary: '#b9b9b9', // Gris Claro
         secondary: '#FFEE58', // Naranja Claro
+        'secondary-neon': '#FFEE581F', // Naranja Claro
         accent: '#FF6E40', // Color de acento para elementos destacados
         deactivated: '#6D4C41',
         dark: '#494949', // Gris
@@ -40,6 +41,9 @@ export default {
         '3xl': '1920px',
         '4xl': '2200px'
       }
+      // boxShadow: {
+      //   neon:
+      // }
     }
   },
   plugins: []
