@@ -56,9 +56,10 @@
 <script setup lang="ts">
 import navigation from '../../data/navigation.json'
 import about from '../../data/about.json'
+import { useEventListener } from '@vueuse/core'
 import { lang } from '../../data/lang'
 import { computed, ref, onMounted } from 'vue'
-// import anime from 'animejs/lib/anime.es.js'
+import anime from 'animejs'
 
 defineProps({
   className: {
@@ -67,27 +68,34 @@ defineProps({
   }
 })
 
-const navBackground = ref(null)
-
 const scrollBreakpoint = ref('300px')
 const staggerPixels = ref('100px')
 const collapseDuration = ref('200mx')
 const suportsScrollTimeline = ref(false)
 const navBackgroundScrollStyle = computed(() => {
-  return suportsScrollTimeline
-    ? {
-        animationTimeline: 'scroll()',
-        animationRange: '100px 400px',
-        animation: 'expand linear both'
-      }
-    : ''
+  // return {
+  //   animation: 'expand linear both',
+  //   animationTimeline: 'scroll()',
+  //   animationRange: '100px 400px'
+  // }
+  // return `animation: expand linear both;
+  //   animation-timeline: scroll();
+  //   animation-range: 100px 400px;`
 })
 
 function handleScrollTimeline() {
   const scrollY = window.scrollY
   // const backgroundAnimation = anime
+  const backgroundAnimation = anime({
+    targets: '#nav-background',
+    scaleY: 1,
+    autoplay: false,
+    easing: 'linear'
+  })
+  useEventListener('scroll', () => {
+    backgroundAnimation.seek(scrollY * 10)
+  })
 }
-
 onMounted(() => {
   suportsScrollTimeline.value = window.CSS.supports(
     'animation-timeline: scroll()'
@@ -102,6 +110,9 @@ onMounted(() => {
   transform: scaleY(0);
   transform-origin: top;
   opacity: 80%;
+  animation: expand linear both;
+  animation-timeline: scroll();
+  animation-range: 100px 400px;
 }
 
 .hover-line {
