@@ -1,5 +1,6 @@
 <template>
   <nav
+    id="navigation"
     :class="`
   text-right
   z-40
@@ -9,7 +10,7 @@
     <div
       id="nav-background"
       class="fixed h-32 z-10 bg-darken w-screen top-0"
-      :style="navBackgroundScrollStyle"
+      :style="[suportsScrollTimeline ? navBackgroundScrollStyle : '']"
     ></div>
     <div
       class="absolute flex flex-col flex-wrap items-end left-1/2 translate-x-[-50%] z-20"
@@ -42,7 +43,10 @@
             <a
               :href="link.url"
               class="inline-block accordionElement whitespace-wrap text-5xl text-medium text-lighter mb-1 hover:text-secondary"
-              :style="`--index: ${index};`"
+              :style="[
+                `--index: ${index};`,
+                suportsScrollTimeline ? accordionElementStyle : ''
+              ]"
               >{{ link.name[lang as 'en' | 'es'] }}
               <div class="hover-line bg-primary w-[25rem] h-[2px]"></div>
             </a>
@@ -68,54 +72,84 @@ defineProps({
   }
 })
 
-const scrollBreakpoint = ref('300px')
-const staggerPixels = ref('100px')
-const collapseDuration = ref('200mx')
+const scrollBreakpoint = ref(300)
+const staggerPixels = ref(400)
+const collapseDuration = ref(200)
 const suportsScrollTimeline = ref(false)
+
+const scrollBreakpointCSS = computed(() => `${scrollBreakpoint.value}px`)
+const staggerPixelsCSS = computed(() => `${staggerPixels.value}px`)
+const collapseDurationCSS = computed(() => `${collapseDuration.value}px`)
+
 const navBackgroundScrollStyle = computed(() => {
-  // return {
-  //   animation: 'expand linear both',
-  //   animationTimeline: 'scroll()',
-  //   animationRange: '100px 400px'
-  // }
-  // return `animation: expand linear both;
-  //   animation-timeline: scroll();
-  //   animation-range: 100px 400px;`
+  return {
+    animation: 'expand linear both',
+    animationTimeline: 'scroll()',
+    animationRange: `100px ${scrollBreakpointCSS.value}`
+  }
 })
 
-function handleScrollTimeline() {
-  const scrollY = window.scrollY
-  // const backgroundAnimation = anime
+const accordionElementStyle = computed(() => {
+  // return {
+  //   animation: 'collapse linear both',
+  //   animationTimeline: 'scroll()',
+  //   animationRange: `100px ${scrollBreakpointCSS.value}`,
+  //   animationDelay: `calc(var(--index) * ${staggerPixels.value}ms)`
+  // }
+})
+function handleScrollBackground() {
   const backgroundAnimation = anime({
     targets: '#nav-background',
-    scaleY: 1,
+    scaleY: [0, 1],
     autoplay: false,
-    easing: 'linear'
+    easing: 'linear',
+    duration: scrollBreakpoint.value
   })
-  useEventListener('scroll', () => {
-    backgroundAnimation.seek(scrollY * 10)
+  useEventListener(window, 'scroll', () => {
+    backgroundAnimation.seek(
+      (window.scrollY * backgroundAnimation.duration) / scrollBreakpoint.value
+    )
   })
 }
+
+function handleScrollAccordion() {
+  const backgroundAnimation = anime({
+    targets: '.accordionElement',
+    scaleY: [0, 1],
+    autoplay: false,
+    easing: 'linear',
+    duration: scrollBreakpoint.value,
+    delay: anime.stagger(staggerPixels.value)
+  })
+
+  useEventListener(window, 'scroll', () => {
+    console.log('SCROLL', window.scrollY)
+    backgroundAnimation.seek(
+      (window.scrollY * backgroundAnimation.duration) / scrollBreakpoint.value
+    )
+  })
+}
+
 onMounted(() => {
   suportsScrollTimeline.value = window.CSS.supports(
     'animation-timeline: scroll()'
   )
+  if (!suportsScrollTimeline.value) {
+    handleScrollBackground()
+  }
 })
 </script>
 
-<style scoped>
-#nav-background {
+<style>
+#navigation #nav-background {
   box-shadow: 0px 8px 5px -8px rgba(0, 0, 0, 0.75);
   height: 140px;
   transform: scaleY(0);
   transform-origin: top;
   opacity: 80%;
-  animation: expand linear both;
-  animation-timeline: scroll();
-  animation-range: 100px 400px;
 }
 
-.hover-line {
+#navigation .hover-line {
   width: 100%;
   opacity: 0;
   transform: scaleX(0);
@@ -125,23 +159,18 @@ onMounted(() => {
     opacity 0.15s ease-in-out;
 }
 
-.accordionElement:hover .hover-line {
+#navigation .accordionElement:hover .hover-line {
   transform: scaleX(1);
   opacity: 100%;
 }
 
-.accordionElement {
+#navigation .accordionElement {
   transform: scaleY(1);
   transform-origin: top;
-  transition:
-    transform 0.2s ease-in-out,
-    background-color 0.2s ease-in-out;
   animation: collapse linear both;
   animation-timeline: scroll();
-  animation-range: 100px
-    calc(
-      v-bind('scrollBreakpoint') + calc(var(--index) * v-bind('staggerPixels'))
-    );
+  animation-range: 100px 300px;
+  animation-delay: calc(var(--index) * 400ms);
 }
 
 @keyframes collapse {
