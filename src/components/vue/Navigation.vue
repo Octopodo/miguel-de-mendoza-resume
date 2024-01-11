@@ -9,7 +9,7 @@
   >
     <div
       id="nav-background"
-      class="fixed h-32 z-10 bg-darken w-screen top-0"
+      class="fixed h-[100px] lg:h-[140px] opacity-100 lg:opacity-80 z-10 bg-darken w-screen top-0"
       :style="[suportsScrollTimeline ? navBackgroundScrollStyle : '']"
     ></div>
     <div
@@ -72,38 +72,45 @@ defineProps({
   }
 })
 
-const scrollBreakpoint = ref(300)
-const staggerPixels = ref(400)
+const scrollBreakpoint = ref(350)
+const staggerPixels = ref(130)
 const collapseDuration = ref(200)
+const navigationTime = ref(500)
 const suportsScrollTimeline = ref(false)
 
+const largeBreakpoint = computed(() => window.innerWidth > 1024)
 const scrollBreakpointCSS = computed(() => `${scrollBreakpoint.value}px`)
+const rangeStart = computed(() => (largeBreakpoint.value ? `100px` : `0px`))
 const staggerPixelsCSS = computed(() => `${staggerPixels.value}px`)
-const collapseDurationCSS = computed(() => `${collapseDuration.value}px`)
+const outRange = computed(() =>
+  largeBreakpoint.value
+    ? `calc(${scrollBreakpointCSS.value} + calc(var(--index) * ${staggerPixelsCSS.value}))`
+    : '200px'
+)
 
 const navBackgroundScrollStyle = computed(() => {
   return {
     animation: 'expand linear both',
     animationTimeline: 'scroll()',
-    animationRange: `100px ${scrollBreakpointCSS.value}`
+    animationRange: `${rangeStart.value} ${scrollBreakpointCSS.value}`
   }
 })
 
 const accordionElementStyle = computed(() => {
-  // return {
-  //   animation: 'collapse linear both',
-  //   animationTimeline: 'scroll()',
-  //   animationRange: `100px ${scrollBreakpointCSS.value}`,
-  //   animationDelay: `calc(var(--index) * ${staggerPixels.value}ms)`
-  // }
+  return {
+    animation: 'collapse linear both',
+    animationTimeline: 'scroll()',
+    animationRange: `${rangeStart.value} ${outRange.value}`
+  }
 })
+
 function handleScrollBackground() {
   const backgroundAnimation = anime({
     targets: '#nav-background',
     scaleY: [0, 1],
     autoplay: false,
     easing: 'linear',
-    duration: scrollBreakpoint.value
+    duration: navigationTime.value
   })
   useEventListener(window, 'scroll', () => {
     backgroundAnimation.seek(
@@ -115,10 +122,10 @@ function handleScrollBackground() {
 function handleScrollAccordion() {
   const backgroundAnimation = anime({
     targets: '.accordionElement',
-    scaleY: [0, 1],
+    scaleY: [1, 0],
     autoplay: false,
     easing: 'linear',
-    duration: scrollBreakpoint.value,
+    duration: navigationTime.value,
     delay: anime.stagger(staggerPixels.value)
   })
 
@@ -136,6 +143,7 @@ onMounted(() => {
   )
   if (!suportsScrollTimeline.value) {
     handleScrollBackground()
+    handleScrollAccordion()
   }
 })
 </script>
@@ -143,10 +151,8 @@ onMounted(() => {
 <style>
 #navigation #nav-background {
   box-shadow: 0px 8px 5px -8px rgba(0, 0, 0, 0.75);
-  height: 140px;
   transform: scaleY(0);
   transform-origin: top;
-  opacity: 80%;
 }
 
 #navigation .hover-line {
@@ -167,10 +173,6 @@ onMounted(() => {
 #navigation .accordionElement {
   transform: scaleY(1);
   transform-origin: top;
-  animation: collapse linear both;
-  animation-timeline: scroll();
-  animation-range: 100px 300px;
-  animation-delay: calc(var(--index) * 400ms);
 }
 
 @keyframes collapse {

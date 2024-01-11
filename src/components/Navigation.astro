@@ -155,7 +155,9 @@ const {class: className} = Astro.props
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   animation: collapse linear both;
   animation-timeline: scroll();
-  animation-range: 100px calc(var(--scroll-breakpoint) + calc(var(--index) * var(--stagger-pixels))) ;
+  animation-range: 100px 
+    calc(var(--scroll-breakpoint) 
+    + calc(var(--index) * var(--stagger-pixels))) ;
 }
 
 
