@@ -1,21 +1,185 @@
 <template>
-  <nav>
-    <a
-      v-for="(link, index) in links"
-      :key="index"
-      :href="link.url"
+  <nav
+    :class="`
+  text-right
+  z-40
+  ${className}
+`"
+  >
+    <div
+      id="nav-background"
+      class="fixed h-32 z-10 bg-darken w-screen top-0"
+      :style="navBackgroundScrollStyle"
+    ></div>
+    <div
+      class="absolute flex flex-col flex-wrap items-end left-1/2 translate-x-[-50%] z-20"
     >
-      {{ link.name[lang as 'en' | 'es'] }}
-    </a>
+      <a
+        id="home-button"
+        href="#"
+        :class="`
+          whitespace-nowrap
+          text-6xl
+          lg:text-9xl
+          4xl:text-10xl
+          font-secondary
+          font-bold
+          text-secondary
+          italic
+          mb-2
+          text-wide
+          mt-4
+          lg:mt-0
+        `"
+        v-html="about.name[lang]"
+      ></a>
+      <div class="navigator">
+        <template
+          v-for="(link, index) in navigation"
+          :key="index"
+        >
+          <div>
+            <a
+              :href="link.url"
+              class="inline-block accordionElement whitespace-wrap text-5xl text-medium text-lighter mb-1 hover:text-secondary"
+              :style="`--index: ${index};`"
+              >{{ link.name[lang as 'en' | 'es'] }}
+              <div class="hover-line bg-primary w-[25rem] h-[2px]"></div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import navigation from '../../data/navigation.json'
+import about from '../../data/about.json'
+import { lang } from '../../data/lang'
+import { computed, ref, onMounted } from 'vue'
+// import anime from 'animejs/lib/anime.es.js'
 
-const links = ref(navigation)
-const lang = ref('en')
+defineProps({
+  className: {
+    type: String,
+    default: ''
+  }
+})
+
+const navBackground = ref(null)
+
+const scrollBreakpoint = ref('300px')
+const staggerPixels = ref('100px')
+const collapseDuration = ref('200mx')
+const suportsScrollTimeline = ref(false)
+const navBackgroundScrollStyle = computed(() => {
+  return suportsScrollTimeline
+    ? {
+        animationTimeline: 'scroll()',
+        animationRange: '100px 400px',
+        animation: 'expand linear both'
+      }
+    : ''
+})
+
+function handleScrollTimeline() {
+  const scrollY = window.scrollY
+  // const backgroundAnimation = anime
+}
+
+onMounted(() => {
+  suportsScrollTimeline.value = window.CSS.supports(
+    'animation-timeline: scroll()'
+  )
+})
 </script>
 
-<style scoped></style>
+<style scoped>
+#nav-background {
+  box-shadow: 0px 8px 5px -8px rgba(0, 0, 0, 0.75);
+  height: 140px;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 80%;
+}
+
+.hover-line {
+  width: 100%;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition:
+    transform 0.25s ease-in-out,
+    opacity 0.15s ease-in-out;
+}
+
+.accordionElement:hover .hover-line {
+  transform: scaleX(1);
+  opacity: 100%;
+}
+
+.accordionElement {
+  transform: scaleY(1);
+  transform-origin: top;
+  transition:
+    transform 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+  animation: collapse linear both;
+  animation-timeline: scroll();
+  animation-range: 100px
+    calc(
+      v-bind('scrollBreakpoint') + calc(var(--index) * v-bind('staggerPixels'))
+    );
+}
+
+@keyframes collapse {
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes expand {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+#home-button {
+  --stroke-color: theme('colors.primary-accent');
+  --stroke-dark: theme('colors.primary-dark');
+  text-shadow:
+    var(--stroke-dark) 1px 0px 0px,
+    var(--stroke-dark) 0.540302px 0.841471px 0px,
+    var(--stroke-dark) -0.416147px 0.909297px 0px,
+    var(--stroke-dark) -0.989992px 0.14112px 0px,
+    var(--stroke-dark) -0.653644px -0.756802px 0px,
+    var(--stroke-dark) 0.283662px -0.958924px 0px,
+    var(--stroke-dark) 0.96017px -0.279415px 0px,
+    var(--stroke-color) 3px 0px 0px,
+    var(--stroke-color) 2.83487px 0.981584px 0px,
+    var(--stroke-color) 2.35766px 1.85511px 0px,
+    var(--stroke-color) 1.62091px 2.52441px 0px,
+    var(--stroke-color) 0.705713px 2.91581px 0px,
+    var(--stroke-color) -0.287171px 2.98622px 0px,
+    var(--stroke-color) -1.24844px 2.72789px 0px,
+    var(--stroke-color) -2.07227px 2.16926px 0px,
+    var(--stroke-color) -2.66798px 1.37182px 0px,
+    var(--stroke-color) -2.96998px 0.42336px 0px,
+    var(--stroke-color) -2.94502px -0.571704px 0px,
+    var(--stroke-color) -2.59586px -1.50383px 0px,
+    var(--stroke-color) -1.96093px -2.27041px 0px,
+    var(--stroke-color) -1.11013px -2.78704px 0px,
+    var(--stroke-color) -0.137119px -2.99686px 0px,
+    var(--stroke-color) 0.850987px -2.87677px 0px,
+    var(--stroke-color) 1.74541px -2.43999px 0px,
+    var(--stroke-color) 2.44769px -1.73459px 0px,
+    var(--stroke-color) 2.88051px -0.838247px 0px,
+    var(--stroke-color) -1.11013px -2.78704px 0px,
+    var(--stroke-color) -0.137119px -2.99686px 0px,
+    var(--stroke-color) 0.850987px -2.87677px 0px,
+    var(--stroke-color) 1.74541px -2.43999px 0px,
+    var(--stroke-color) 2.44769px -1.73459px 0px,
+    var(--stroke-color) 2.88051px -0.838247px 0px;
+}
+</style>
