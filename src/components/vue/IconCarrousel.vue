@@ -1,38 +1,45 @@
+<script setup lang="ts">
+import { ref, computed, onMounted, type Ref } from 'vue'
+import { breakpoints } from '../../data/styleData'
+import baseUrl from '../../data/baseUrl.ts'
+
+const baseIconPath = baseUrl + '/icons/'
+const iconExtension = '.svg'
+const iconList = ref(['vue', 'extendscript', 'ae', 'harmony'])
+const windowWidth = ref(0)
+const largeBreakpoint = computed(
+  () => window.innerWidth > breakpoints.lg
+)
+
+const iconWidth = computed(() => {
+  return windowWidth?.value > breakpoints.lg ? 82 : 41
+})
+
+onMounted(() => {
+  windowWidth.value = window.innerWidth
+  new ResizeObserver(() => {
+    windowWidth.value = window.innerWidth
+  }).observe(document.body)
+})
+</script>
+
 <template>
-  <div class="icon-carrousel flex flex-row absolute bottom-64 right-0">
+  <div
+    class="icon-carrousel flex flex-row absolute lg:bottom-64 bottom-16 lg:right-0 right-32"
+  >
     <template
       v-for="(icon, index) in iconList"
       :key="index"
     >
-      <component
-        :is="icon"
+      <img
         class="mx-2"
-        v-bind="{ size: 82 }"
+        alt="icon"
+        :src="`${baseIconPath}${icon}${iconExtension}`"
+        :width="iconWidth"
       />
     </template>
   </div>
 </template>
-
-<script setup lang="ts">
-import {
-  IconKeyboard,
-  IconBrandVue,
-  IconBrandAdobe,
-  IconMickey,
-  IconBrain,
-  IconScribble
-} from '@tabler/icons-vue'
-
-import { ref } from 'vue'
-const iconList = ref([
-  IconKeyboard,
-  IconBrandVue,
-  IconBrandAdobe,
-  IconMickey,
-  IconBrain,
-  IconScribble
-])
-</script>
 
 <style scoped>
 .icon-carrousel {

@@ -1,0 +1,98 @@
+---
+import {
+  brightOrange,
+  adobeOrange,
+  mixedOrange,
+  greenJoker
+} from '../../colors/color-themes'
+
+const colorSets={
+  // brightOrange,
+  // adobeOrange,
+  mixedOrange,
+  greenJoker
+}
+
+function getRandomColorSet() {
+  const keys = Object.keys(colorSets);
+  const randomIndex = Math.floor(Math.random() * keys.length);
+  const randomKey = keys[randomIndex];
+  return colorSets[randomKey as keyof typeof colorSets];
+}
+
+const colorSet = getRandomColorSet();
+const {
+  'primary-lighter': primaryLighter,
+  'primary-light': primaryLight,
+  primary,
+  'primary-dark': primaryDark,
+  'primary-darken': primaryDarken,
+  'primary-accent': primaryAccent,
+  'secondary-lighter': secondaryLighter,
+  'secondary-light': secondaryLight,
+  secondary,
+  'secondary-dark': secondaryDark,
+  'secondary-darken': secondaryDarken,
+  'complement-lighter': complementLighter,
+  'complement-light': complementLight,
+  complement,
+  'complement-dark': complementDark,
+  'complement-darken': complementDarken,
+  light,
+  lighter,
+  dark,
+  darker,
+  darken
+} = colorSet;
+---
+
+<style define:vars={{
+  primaryLighter,
+  primaryLight,
+  primary,
+  primaryDark,
+  primaryDarken,
+  primaryAccent,
+  secondaryLighter,
+  secondaryLight,
+  secondary,
+  secondaryDark,
+  secondaryDarken,
+  complementLighter,
+  complementLight,
+  complement,
+  complementDark,
+  complementDarken,
+  light,
+  lighter,
+  dark,
+  darker,
+  darken
+}}>
+  :root {
+    --primary-lighter: var(--primaryLighter);
+    --primary-light: var(--primaryLight);
+    --primary: var(--primary);
+    --primary-dark: var(--primaryDark);
+    --primary-darken: var(--primaryDarken);
+    --primary-accent: var(--primaryAccent);
+
+    --secondary-lighter: var(--secondaryLighter);
+    --secondary-light: var(--secondaryLight);
+    --secondary: var(--secondary);
+    --secondary-dark: var(--secondaryDark);
+    --secondary-darken: var(--secondaryDarken);
+
+    --complement-lighter: var(--complementLighter);
+    --complement-light: var(--complementLight);
+    --complement: var(--complement);
+    --complement-dark: var(--complementDark);
+    --complement-darken: var(--complementDarken);
+
+    --light: var(--light);
+    --lighter: var(--lighter);
+    --dark: var(--dark);
+    --darker: var(--darker);
+    --darken: var(--darken);
+  }
+</style>
