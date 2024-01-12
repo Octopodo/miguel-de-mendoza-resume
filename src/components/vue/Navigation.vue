@@ -31,6 +31,7 @@
           text-wide
           mt-4
           lg:mt-0
+
         `"
         v-html="about.name[lang]"
       ></a>
@@ -48,7 +49,9 @@
                 suportsScrollTimeline ? accordionElementStyle : ''
               ]"
               >{{ link.name[lang as 'en' | 'es'] }}
-              <div class="hover-line bg-primary w-[25rem] h-[2px]"></div>
+              <div
+                class="hover-line bg-primary w-[25rem] h-[2px]"
+              ></div>
             </a>
           </div>
         </template>
@@ -79,8 +82,12 @@ const navigationTime = ref(500)
 const suportsScrollTimeline = ref(false)
 
 const largeBreakpoint = computed(() => window.innerWidth > 1024)
-const scrollBreakpointCSS = computed(() => `${scrollBreakpoint.value}px`)
-const rangeStart = computed(() => (largeBreakpoint.value ? `100px` : `0px`))
+const scrollBreakpointCSS = computed(
+  () => `${scrollBreakpoint.value}px`
+)
+const rangeStart = computed(() =>
+  largeBreakpoint.value ? `100px` : `0px`
+)
 const staggerPixelsCSS = computed(() => `${staggerPixels.value}px`)
 const outRange = computed(() =>
   largeBreakpoint.value
@@ -114,7 +121,8 @@ function handleScrollBackground() {
   })
   useEventListener(window, 'scroll', () => {
     backgroundAnimation.seek(
-      (window.scrollY * backgroundAnimation.duration) / scrollBreakpoint.value
+      (window.scrollY * backgroundAnimation.duration) /
+        scrollBreakpoint.value
     )
   })
 }
@@ -132,7 +140,8 @@ function handleScrollAccordion() {
   useEventListener(window, 'scroll', () => {
     console.log('SCROLL', window.scrollY)
     backgroundAnimation.seek(
-      (window.scrollY * backgroundAnimation.duration) / scrollBreakpoint.value
+      (window.scrollY * backgroundAnimation.duration) /
+        scrollBreakpoint.value
     )
   })
 }
@@ -224,4 +233,41 @@ onMounted(() => {
     var(--stroke-color) 2.44769px -1.73459px 0px,
     var(--stroke-color) 2.88051px -0.838247px 0px;
 }
+/* #home-button:hover {
+  --stroke-color: theme('colors.primary-accent');
+  --stroke-dark: theme('colors.primary-lighter');
+  text-shadow:
+    var(--stroke-dark) 1px 0px 0px,
+    var(--stroke-dark) 0.540302px 0.841471px 0px,
+    var(--stroke-dark) -0.416147px 0.909297px 0px,
+    var(--stroke-dark) -0.989992px 0.14112px 0px,
+    var(--stroke-dark) -0.653644px -0.756802px 0px,
+    var(--stroke-dark) 0.283662px -0.958924px 0px,
+    var(--stroke-dark) 0.96017px -0.279415px 0px,
+    var(--stroke-color) 3px 0px 0px,
+    var(--stroke-color) 2.83487px 0.981584px 0px,
+    var(--stroke-color) 2.35766px 1.85511px 0px,
+    var(--stroke-color) 1.62091px 2.52441px 0px,
+    var(--stroke-color) 0.705713px 2.91581px 0px,
+    var(--stroke-color) -0.287171px 2.98622px 0px,
+    var(--stroke-color) -1.24844px 2.72789px 0px,
+    var(--stroke-color) -2.07227px 2.16926px 0px,
+    var(--stroke-color) -2.66798px 1.37182px 0px,
+    var(--stroke-color) -2.96998px 0.42336px 0px,
+    var(--stroke-color) -2.94502px -0.571704px 0px,
+    var(--stroke-color) -2.59586px -1.50383px 0px,
+    var(--stroke-color) -1.96093px -2.27041px 0px,
+    var(--stroke-color) -1.11013px -2.78704px 0px,
+    var(--stroke-color) -0.137119px -2.99686px 0px,
+    var(--stroke-color) 0.850987px -2.87677px 0px,
+    var(--stroke-color) 1.74541px -2.43999px 0px,
+    var(--stroke-color) 2.44769px -1.73459px 0px,
+    var(--stroke-color) 2.88051px -0.838247px 0px,
+    var(--stroke-color) -1.11013px -2.78704px 0px,
+    var(--stroke-color) -0.137119px -2.99686px 0px,
+    var(--stroke-color) 0.850987px -2.87677px 0px,
+    var(--stroke-color) 1.74541px -2.43999px 0px,
+    var(--stroke-color) 2.44769px -1.73459px 0px,
+    var(--stroke-color) 2.88051px -0.838247px 0px;
+} */
 </style>
