@@ -16,62 +16,76 @@ const showNames = false
 ---
 
 
-<div  class="
-  socials
-  border-2 
-  border-dark
-  w-[fit-content]
-  sticky 
-  bottom-4
-  left-1/2
-  flex 
-  flex-row 
-  cursor-pointer
-  bg-primary-darken
-  rounded-[30px] 
-  shadow-lg
-  hover:bg-primary
-  hover:border-accent-dark
-  hover:translate-y-0
-  transform-gpu translate-x-[-50%] translate-y-[70%]
-  transition-transform duration-300 ease-in-out 
-  motion-reduce:transition-none 
-  motion-reduce:hover:transform-none
-"
+<div  
+  id="socials"
+  class="
+    p-2
+    w-[fit-content]
+    sticky 
+    bottom-12
+    md:bottom-4
+    left-0
+    right-0
+    mx-auto
+    hover:shadow-2xl
+    flex 
+    flex-row 
+    cursor-pointer
+    bg-primary
+    lg:bg-primary-dark
+    rounded-[30px] 
+
+    hover:bg-primary
+    hover:border-accent-dark
+    md:hover:translate-y-0
+    transform-gpu 
+    translate-y-[70%]
+    md:transition-transform duration-300 ease-in-out 
+    motion-reduce:transition-none 
+    motion-reduce:hover:transform-none
+  "
 >
   <a href={urls.github} class="pt-1 pb-2 px-3" target="_blank">
     <IconBrandGithub class={`
       social-icon
-      size-6 
-      inline 
-      text-secondary-dark
+      size-8 
+      inline
+      text-lighter
+      hover:text-complement-light 
+      md:text-light
     `}/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
   </a>
   <a href={urls.stackOverflow} class="pt-1 pb-2 px-3"  target="_blank">
     <IconBrandStackoverflow class={`
       social-icon
-      size-6 
-      inline 
-      text-secondary-dark
+      size-8 
+      inline
+      text-lighter
+      hover:text-complement-light 
+      md:text-light
     `}/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
   </a>
   <a href={urls.vimeo} class="pt-1 pb-2 px-3"  target="_blank">
     <IconBrandVimeo class={`
       social-icon
-      size-6 
-      inline 
-      text-secondary-dark
+      size-8 
+      inline
+      text-lighter
+      hover:text-complement-light 
+      md:text-light
     `}/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
   </a>
   <a href={urls.github} class="pt-1 pb-2 px-3"  target="_blank">
     <IconMail class={`
       social-icon
-      size-6 
-      inline 
-      text-secondary-dark
+      size-8 
+      inline
+      text-lighter
+      hover:text-complement-light 
+      md:text-light
     `}/>
     {showNames && <h3 class="md:inline hidden">Github</h3>}
   </a>
@@ -81,15 +95,19 @@ const showNames = false
 </div>
 
 <style>
-.socials:hover .social-icon{
+ #socials:hover .social-icon{
   color: theme('colors.lighter')
 }
 
-.socials:hover .social-icon:hover{
-  color: theme('colors.secondary')
+#socials:hover .social-icon:hover{
+  color: theme('colors.complement-light')
+} 
+
+#socials {
+  box-shadow: 0px 5px 12px 0px rgba(0,0,0,0.25);
 }
 
-.socials::after {
+#socials::after {
   content: "";
   position: absolute;
   top: -20px;
