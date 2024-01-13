@@ -11,6 +11,7 @@ const {class: className} = Astro.props
 <nav class={`
   text-right
   z-40
+  w-full
   ${className}
 `}>
   <div 
@@ -59,7 +60,6 @@ const {class: className} = Astro.props
   <div class="navigator">
     {navigation.map((link,index) => 
       <div>
-      
         <a 
           href={link.url}
           class="
@@ -79,17 +79,14 @@ const {class: className} = Astro.props
               hover-line
               bg-primary 
               w-[25rem]  
-              h-[2px]"
-            ></div>
+              h-[2px]
+            "
+          ></div>
         </a>
   
-        
-    </div>
+      </div>
       )}
-      
-
-
-  </div>
+    </div>
   </div>
 </nav>
 

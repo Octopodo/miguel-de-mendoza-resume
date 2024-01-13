@@ -127,7 +127,8 @@ onMounted(() => {
         :class="`
           my-name-title
           whitespace-nowrap
-          text-6xl
+          text-4xl
+          md:text-6xl
           lg:text-9xl
           4xl:text-10xl
           font-secondary
@@ -156,7 +157,8 @@ onMounted(() => {
                 inline-block 
                 accordionElement 
                 whitespace-wrap 
-                text-5xl 
+                text-3xl
+                md:text-5xl 
                 text-medium 
                 text-lighter 
                 mb-1 
