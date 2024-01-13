@@ -119,7 +119,7 @@ onMounted(() => {
       :style="[suportsScrollTimeline ? navBackgroundScrollStyle : '']"
     ></div>
     <div
-      class="absolute flex flex-col flex-wrap items-end left-1/2 translate-x-[-50%] z-20"
+      class="absolute flex flex-col flex-wrap items-end right-6 sm:right-12 lg:right-auto lg:left-1/2 lg:translate-x-[-50%] z-20"
     >
       <a
         id="home-button"
@@ -128,7 +128,7 @@ onMounted(() => {
           my-name-title
           whitespace-nowrap
           text-4xl
-          md:text-6xl
+          sm:text-6xl
           lg:text-9xl
           4xl:text-10xl
           font-secondary
@@ -158,7 +158,7 @@ onMounted(() => {
                 accordionElement 
                 whitespace-wrap 
                 text-3xl
-                md:text-5xl 
+                sm:text-5xl 
                 text-medium 
                 text-lighter 
                 mb-1 
@@ -219,21 +219,22 @@ onMounted(() => {
   }
 }
 
-#home-button:hover {
-  background: linear-gradient(
-    to right,
-    theme('colors.secondary-light') 50%,
-    theme('colors.secondary')
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+@media (hover: hover) {
+  #home-button:hover {
+    background: linear-gradient(
+      to right,
+      theme('colors.secondary-light') 50%,
+      theme('colors.secondary')
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
-
 #home-button {
   background: linear-gradient(
     to left,
-    theme('colors.primary') 50%,
+    theme('colors.primary'),
     theme('colors.primary-light')
   );
   -webkit-background-clip: text;
