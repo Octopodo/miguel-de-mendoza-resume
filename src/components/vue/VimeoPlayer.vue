@@ -1,29 +1,27 @@
 <template>
-  <div
-    ref="playerContainer"
-    class="bottom-96 right-0"
-  ></div>
+  <div class="video-container">
+    <iframe
+      src="https://player.vimeo.com/video/749369651?autoplay=1&muted=1&loop=1"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
 </template>
 
-<script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import Player from '@vimeo/player'
+<style scoped>
+.video-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 56.25%; /* for 16:9 aspect ratio */
+}
 
-const playerContainer = ref(null)
-const yourPrivateVideoId = '749369651'
-let player: Player | null = null
-
-onMounted(() => {
-  player = new Player(playerContainer.value, {
-    id: yourPrivateVideoId,
-    autoplay: true,
-    muted: true,
-    width: 850
-  })
-})
-
-onUnmounted(() => {
-  player?.destroy()
-  player = null
-})
-</script>
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>

@@ -231,6 +231,16 @@ onMounted(() => {
     -webkit-text-fill-color: transparent;
   }
 }
+#home-button:active {
+  background: linear-gradient(
+    to right,
+    theme('colors.secondary-light') 50%,
+    theme('colors.secondary')
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 #home-button {
   background: linear-gradient(
     to left,
