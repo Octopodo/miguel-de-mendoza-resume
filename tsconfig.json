@@ -2,8 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "jsx": "preserve",
-
-  },
+    "allowJs": true
+  }
   // "typeRoots": ["../node_modules/@types/"],
-
 }
