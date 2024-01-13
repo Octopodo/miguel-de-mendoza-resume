@@ -25,7 +25,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="icon-carrousel flex flex-row absolute lg:bottom-64 bottom-16 lg:right-0 right-32"
+    class="icon-carrousel flex flex-row absolute lg:bottom-64 bottom-16 right-6 lg:right-0"
   >
     <template
       v-for="(icon, index) in iconList"
