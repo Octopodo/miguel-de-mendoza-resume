@@ -28,7 +28,7 @@ export const brightOrange = {
 export const adobeOrange = {
   'primary-lighter': '#F08D65',
   'primary-light': '#F0803A',
-  primary: '#F05C07',
+  primary: '#f36412',
   'primary-dark': '#A1460E',
   'primary-darken': '#401C06',
   'primary-accent': '#e25503',
@@ -39,9 +39,9 @@ export const adobeOrange = {
   'secondary-dark': '#8A6019',
   'secondary-darken': '#060236',
 
-  'complement-lighter': '#5966F0',
-  'complement-light': '#2626F0',
-  complement: '#3D2BF0',
+  'complement-lighter': '#805ff7',
+  'complement-light': '#623af2',
+  complement: '#3d0bef',
   'complement-dark': '#0E0578',
   'complement-darken': '#4D350E',
 
