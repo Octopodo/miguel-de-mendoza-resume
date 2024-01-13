@@ -1,7 +1,7 @@
 <template>
   <div
     ref="playerContainer"
-    class="absolute bottom-96 right-0"
+    class="bottom-96 right-0"
   ></div>
 </template>
 
@@ -17,15 +17,9 @@ onMounted(() => {
   player = new Player(playerContainer.value, {
     id: yourPrivateVideoId,
     autoplay: true,
-    muted: true
+    muted: true,
+    width: 850
   })
-
-  const resizeHandler = () => {
-    player?.setHeight(window.innerHeight)
-    player?.setWidth(window.innerWidth)
-  }
-
-  window.addEventListener('resize', resizeHandler)
 })
 
 onUnmounted(() => {

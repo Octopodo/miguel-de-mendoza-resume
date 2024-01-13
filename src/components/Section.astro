@@ -1,10 +1,11 @@
 ---
-const {class: className} = Astro.props
+const {class: className,   id} = Astro.props
 ---
 
 <section
-  {...Astro.props}
+  id={id}
   class={ `
+    page-section
     relative 
     inline-block
     rounded-lg
@@ -19,3 +20,14 @@ const {class: className} = Astro.props
 >
   <slot />
 </section>
+
+<style>
+.page-section::before  {
+  content:  "";
+  display: block;
+  height: 200px;
+  margin: -100px 0 0;
+  visibility: hidden;
+}
+
+</style>

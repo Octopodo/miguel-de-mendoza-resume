@@ -7,24 +7,27 @@ const portrait = baseUrl + '/self-portrait.png'
 ---
 
 <div class="relative top-10 home">
-  <img  
-    src={portrait} 
-    alt="A picture of Miguel de Mendoza" 
-    class={`
-      inline-block
-      w-[200px] 
-      lg:w-auto
-      lg:h-screen
-      2xl:ml-[-10%]
-      lg:ml-[-8%]
-      md:ml-[2%]
-      mt-[10%]
-      z-50
-      transition-transform duration-200 ease-in-out 
-      hover:scale-[1.02]
-      cursor-pointer
-    `}
-  >
+  <a href="#about">
+    <img  
+      
+      src={portrait} 
+      alt="A picture of Miguel de Mendoza" 
+      class={`
+        inline-block
+        w-[200px] 
+        lg:w-auto
+        lg:h-screen
+        2xl:ml-[-10%]
+        lg:ml-[-8%]
+        md:ml-[2%]
+        mt-[10%]
+        z-50
+        transition-transform duration-200 ease-in-out 
+        hover:scale-[1.02]
+        cursor-pointer
+      `}
+    >
+  </a>
   <div 
     class="
       absolute
@@ -36,7 +39,7 @@ const portrait = baseUrl + '/self-portrait.png'
   >
   
   </div>
-  <VimeoPlayer client:load/>
+
   <IconCarrousel client:load />
 </div>
 
