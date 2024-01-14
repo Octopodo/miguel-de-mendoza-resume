@@ -115,7 +115,7 @@ onMounted(() => {
   >
     <div
       id="nav-background"
-      class="fixed h-[65px] md:h-[100px] lg:h-[140px] opacity-100 lg:opacity-80 z-10 bg-darken w-screen top-0"
+      class="fixed h-[65px] md:h-[100px] lg:h-[180px] opacity-100 lg:opacity-80 z-10 bg-darken w-screen top-0"
       :style="[suportsScrollTimeline ? navBackgroundScrollStyle : '']"
     ></div>
     <div
