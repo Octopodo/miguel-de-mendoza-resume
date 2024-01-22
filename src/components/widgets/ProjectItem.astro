@@ -1,0 +1,46 @@
+---
+import {lang} from '../../data/lang'
+interface Props{
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  date?: string;
+  type?: string;
+  icons?: any[];
+  class?: string;
+}
+
+const { 
+  title="Project", 
+  description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+  image='https://picsum.photos/400/280',
+  url='', 
+  date='01-12-2021', 
+  type='Development',
+  icons=[],
+  }: Props = Astro.props;
+
+
+--- 
+
+
+<div class={
+` ${Astro.props.class}
+  col-span-8
+  border-[3px] border-primary rounded-xl
+`}>
+    
+  <slot name="image"/>
+
+  <div class="z-10 relative">
+    <h2>{title}</h2>
+    <p class=" ">{description}</p>
+
+  </div>
+</div>
+
+
+<style>
+
+</style>

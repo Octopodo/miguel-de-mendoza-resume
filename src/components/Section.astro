@@ -1,33 +1,30 @@
 ---
-const {class: className,   id} = Astro.props
+const {id, width='auto', height='auto'} = Astro.props
 ---
 
 <section
   id={id}
   class={ `
-    page-section
+    w-full h-full
     relative 
-    inline-block
     rounded-lg
     border-2
     border-primary
-    w-full
-    p-4
+
     sm:p-24
-    text-balance
-    bg-darken
-    ${className}` }
+    bg-darken flex justify-center items-center
+` }
+  style={`
+    width: ${width};
+    height: ${height};
+  `}
 >
-  <slot />
+  <div class={`${Astro.props.class}`}>
+    <slot />
+  </div>
+</div>
 </section>
 
 <style>
-.page-section::before  {
-  content:  "";
-  display: block;
-  height: 160px;
-  margin: -100px 0 0;
-  visibility: hidden;
-}
 
 </style>

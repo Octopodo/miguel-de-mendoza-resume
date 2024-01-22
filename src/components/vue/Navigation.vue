@@ -7,10 +7,6 @@ import { computed, ref, onMounted, onBeforeMount } from 'vue'
 import anime from 'animejs'
 import { breakpoints } from '../../data/styleData'
 
-onBeforeMount(() => {
-  console.log('BEFORE MOUNT')
-})
-
 defineProps({
   className: {
     type: String,
@@ -25,7 +21,6 @@ const navigationTime = ref(500)
 const suportsScrollTimeline = ref(false)
 
 const largeBreakpoint = computed(() => {
-  console.log('BREAKPOINT', window.innerWidth)
   return window.innerWidth > breakpoints.lg
 })
 const scrollBreakpointCSS = computed(
@@ -41,6 +36,13 @@ const outRange = computed(() =>
     : '200px'
 )
 
+const navHomeScrollStyle = computed(() => {
+  return {
+    animation: 'shrink ease-out both',
+    animationTimeline: 'scroll()',
+    animationRange: `${rangeStart.value} ${scrollBreakpoint.value}px`
+  }
+})
 const navBackgroundScrollStyle = computed(() => {
   return {
     animation: 'expand linear both',
@@ -57,10 +59,27 @@ const accordionElementStyle = computed(() => {
   }
 })
 
+function handleScrollHome() {
+  const backgroundAnimation = anime({
+    targets: '#home-button',
+    scale: [1, 0.5],
+    'margin-top': '-3%',
+    autoplay: false,
+    easing: 'linear',
+    duration: navigationTime.value
+  })
+  useEventListener(window, 'scroll', () => {
+    backgroundAnimation.seek(
+      (window.scrollY * backgroundAnimation.duration) /
+        scrollBreakpoint.value
+    )
+  })
+}
+
 function handleScrollBackground() {
   const backgroundAnimation = anime({
     targets: '#nav-background',
-    scaleY: [0, 1],
+    scaleY: [0, 0.5],
     autoplay: false,
     easing: 'linear',
     duration: navigationTime.value
@@ -84,7 +103,6 @@ function handleScrollAccordion() {
   })
 
   useEventListener(window, 'scroll', () => {
-    console.log('SCROLL', window.scrollY)
     backgroundAnimation.seek(
       (window.scrollY * backgroundAnimation.duration) /
         scrollBreakpoint.value
@@ -93,13 +111,13 @@ function handleScrollAccordion() {
 }
 
 onMounted(() => {
-  console.log('MOUNTED')
   suportsScrollTimeline.value = window.CSS.supports(
     'animation-timeline: scroll()'
   )
   if (!suportsScrollTimeline.value) {
     handleScrollBackground()
     handleScrollAccordion()
+    handleScrollHome()
   }
 })
 </script>
@@ -115,7 +133,16 @@ onMounted(() => {
   >
     <div
       id="nav-background"
-      class="fixed h-[65px] md:h-[100px] lg:h-[180px] opacity-100 lg:opacity-80 z-10 bg-darken w-screen top-0"
+      :class="`
+        fixed h-[65px] 
+        md:h-[100px] 
+        lg:h-[180px] 
+        opacity-100 
+        lg:opacity-80 
+        z-10
+         bg-darken 
+        w-screen 
+        top-0`"
       :style="[suportsScrollTimeline ? navBackgroundScrollStyle : '']"
     ></div>
     <div
@@ -124,8 +151,9 @@ onMounted(() => {
       <a
         id="home-button"
         href="#"
-        :class="`
-          my-name-title
+        :style="suportsScrollTimeline ? navHomeScrollStyle : ''"
+        :class="[
+          `my-name-title
           whitespace-nowrap
           text-4xl
           sm:text-6xl
@@ -140,9 +168,8 @@ onMounted(() => {
           pr-4
           text-wide
           mt-4
-          lg:mt-0
-
-        `"
+          lg:mt-0`
+        ]"
         v-html="about.name[lang]"
       ></a>
       <div class="navigator">
@@ -207,18 +234,6 @@ onMounted(() => {
   transform-origin: top;
 }
 
-@keyframes collapse {
-  to {
-    transform: scaleY(0);
-  }
-}
-
-@keyframes expand {
-  to {
-    transform: scaleY(1);
-  }
-}
-
 @media (hover: hover) {
   #home-button:hover {
     background: linear-gradient(
@@ -231,6 +246,7 @@ onMounted(() => {
     -webkit-text-fill-color: transparent;
   }
 }
+
 #home-button:active {
   background: linear-gradient(
     to right,
@@ -241,6 +257,7 @@ onMounted(() => {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 #home-button {
   background: linear-gradient(
     to left,
@@ -250,5 +267,26 @@ onMounted(() => {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@keyframes collapse {
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes expand {
+  to {
+    transform: scaleY(0.5);
+  }
+}
+
+@keyframes shrink {
+  25% {
+  }
+  to {
+    transform: scale(0.5);
+    margin-top: -3%;
+  }
 }
 </style>

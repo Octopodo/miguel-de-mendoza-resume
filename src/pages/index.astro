@@ -4,7 +4,7 @@ import Section from '../components/Section.astro'
 
 import Home from  '../sections/Home.astro'
 import About  from  '../sections/About.astro'
-import Skills from '../sections/Skills.astro'
+import Development from '../sections/Development.astro'
 import Tech from  '../sections/Tech.astro'
 import Jobs  from  '../sections/Jobs.astro'
 import Projects from '../sections/Projects.astro'
@@ -17,14 +17,17 @@ import Animation from '../sections/Animation.astro'
   <Section id="about">
     <About/>
   </Section>
-  <Section id="animation">
+  <Section id="animation" class="w-full h-[500px]">
     <Animation/>
   </Section>
-  <Section id="dev">
+  <div class="w-[150%] translate-x-[-16%]">
+    <Section id="dev" >
+      <Development/>
+      
+    </Section>
 
-  </Section>
+  </div>
   <Section id="web">
-    <Skills/>
   </Section>
   <Section id="contact">
     <Tech/>
