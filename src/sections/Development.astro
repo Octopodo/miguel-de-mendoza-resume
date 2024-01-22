@@ -1,8 +1,9 @@
 ---
-import skills from '../data/skills.json'
+import data from '../data/dev-projects.json'
+import baseUrl from '../data/baseUrl.ts'
 import {lang} from '../data/lang'
 import ProjectItem from '../components/widgets/ProjectItem.astro'
-
+import HoverVideo from '../components/widgets/HoverVideo.vue'
 const numProjects = 3;
 ---
 
@@ -10,20 +11,16 @@ const numProjects = 3;
   w-full 
   grid grid-cols-10 auto-rows-[25rem] gap-5
   mx-auto p20 cursor-pointer
-  
 `}>
-  {[...Array(numProjects)].map((_, i) =>
-    <ProjectItem class="col-span-5 relative group overflow-hidden">
-      <div 
-        slot="image"
-        class={`
-          absolute left-0 top-0 bottom-0 w-full h-full
-          group-hover:scale-110 transition-scale duration-200 
-          ease-in-out opacity-20 hover:opacity-80 bg-cover  bg-center bg-no-repeat z-0
-        `}
-        style={`background-image: url('https://picsum.photos/400/280')`}
-      >
-      </div>
-    </ProjectItem>
-  )}
+  <ProjectItem 
+    class="col-span-5 relative overflow-hidden"
+    title={data.projects[0].name[lang]}  
+    description={data.projects[0].description[lang]}
+    url={data.projects[0].link}
+    
+  >
+    <HoverVideo src={baseUrl+data.projects[0].image} slot="image" />
+    
+  </ProjectItem>
+
 </div>

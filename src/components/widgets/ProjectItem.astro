@@ -27,15 +27,30 @@ const {
 
 <div class={
 ` ${Astro.props.class}
-
+  group
+  relative
   border-[3px] border-primary rounded-xl
 `}>
-    
-  <slot name="image"/>
+  <div 
 
-  <div class="z-10 relative">
-    <h2>{title}</h2>
-    <p class=" ">{description}</p>
+    class={`
+      absolute left-0 top-0 bottom-0 w-full h-full
+      group-hover:scale-110 transition-scale duration-200 
+      ease-in-out group-hover:opacity-20 opacity-80 bg-cover  bg-center bg-no-repeat z-0
+    `}
+    
+  >
+    <slot name="image"/>
+  </div>
+
+  <div class="z-10 flex h-full relative">
+    <h2 class="
+    group-hover:text-secondary text-complement text-6xl 
+      font-black "
+    >{title}</h2>
+    <p class="self-end text-complement group-hover:text-primary 
+      font-light font-secondary"
+    >{description}</p>
 
   </div>
 </div>

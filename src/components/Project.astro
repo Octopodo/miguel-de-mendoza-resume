@@ -1,9 +1,0 @@
----
-import {lang} from '../data/lang'
-const {schema} = Astro.props
----
-<h3>{schema.period[lang]}</h3>
-<h2 set:html={schema.name[lang]}></h2>
-<p set:html={schema.description[lang]}></p>
-
-
